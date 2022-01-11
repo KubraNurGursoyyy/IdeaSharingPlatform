@@ -18,6 +18,9 @@ namespace IdeaSharingPlatform.WebMvc.Controllers
         //giriş sayfasından sign up ve miafir açılır
         UserAccess userAccess;
        // int currentprojectid = 0;
+       //this is a commend line for trying git
+
+
 
         [AllowAnonymous]
         [HttpGet]
