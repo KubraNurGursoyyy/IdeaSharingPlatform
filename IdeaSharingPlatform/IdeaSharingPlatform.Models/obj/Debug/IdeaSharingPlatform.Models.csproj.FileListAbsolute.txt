@@ -1,0 +1,15 @@
+D:\source\repos\IdeaSharingPlatform.Models\bin\Debug\IdeaSharingPlatform.Models.dll
+D:\source\repos\IdeaSharingPlatform.Models\bin\Debug\IdeaSharingPlatform.Models.pdb
+D:\source\repos\IdeaSharingPlatform.Models\obj\Debug\IdeaSharingPlatform.Models.csproj.CoreCompileInputs.cache
+D:\source\repos\IdeaSharingPlatform.Models\obj\Debug\IdeaSharingPlatform.Models.dll
+D:\source\repos\IdeaSharingPlatform.Models\obj\Debug\IdeaSharingPlatform.Models.pdb
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Models\bin\Debug\IdeaSharingPlatform.Models.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Models\bin\Debug\IdeaSharingPlatform.Models.pdb
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Models\obj\Debug\IdeaSharingPlatform.Models.csproj.CoreCompileInputs.cache
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Models\obj\Debug\IdeaSharingPlatform.Models.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Models\obj\Debug\IdeaSharingPlatform.Models.pdb
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Models\bin\Debug\IdeaSharingPlatform.Models.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Models\bin\Debug\IdeaSharingPlatform.Models.pdb
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Models\obj\Debug\IdeaSharingPlatform.Models.csproj.CoreCompileInputs.cache
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Models\obj\Debug\IdeaSharingPlatform.Models.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Models\obj\Debug\IdeaSharingPlatform.Models.pdb

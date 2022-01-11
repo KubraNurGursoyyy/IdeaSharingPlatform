@@ -1,0 +1,677 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UtilPack.TabularData</name>
+    </assembly>
+    <members>
+        <member name="T:UtilPack.TabularData.DataRow`2">
+            <summary>
+            This interface can be thought as one entrypoint for this library, and it presents a single row in a data which can be represented as a set of rows, each with a set of columns.
+            The design of this library does not constraint that each of those rows should have same amount of columns, therefore all information about the columns is available through this interface.
+            The <see cref="T:UtilPack.TabularData.AsyncDataRow"/> interface and synchronous version of it still in development, both extend this interface.
+            </summary>
+            <seealso cref="T:UtilPack.TabularData.AsyncDataRow"/>
+        </member>
+        <member name="M:UtilPack.TabularData.DataRow`2.GetColumn(System.Int32)">
+            <summary>
+            Gets the <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> at given index.
+            </summary>
+            <param name="index">The index. Typically is zero-based, but depending on a context, may not be.</param>
+            <returns>An instance of <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> containing information about the column of current <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</returns>
+            <exception cref="T:System.ArgumentException">If given <paramref name="index"/> was not in a valid range.</exception>
+        </member>
+        <member name="P:UtilPack.TabularData.DataRow`2.Metadata">
+            <summary>
+            Gets the <see cref="T:UtilPack.TabularData.DataRowMetaData"/> object describing the columns and data of each column for this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.
+            </summary>
+            <value>The <see cref="T:UtilPack.TabularData.DataRowMetaData"/> object describing the columns and data of each column for this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</value>
+        </member>
+        <member name="T:UtilPack.TabularData.AsyncDataRow">
+            <summary>
+            This interface specializes <see cref="T:UtilPack.TabularData.DataRow`2"/> interface to constrain this to have <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> column objects.
+            </summary>
+            <remarks>
+            Since the data is potentially coming outside this process, and might need IO processing, the API is fully asynchronous.
+            </remarks>
+        </member>
+        <member name="T:UtilPack.TabularData.DataRowMetaData">
+            <summary>
+            This interface provides properties related to <see cref="T:UtilPack.TabularData.DataRowMetaData`1"/> but that do not require generic type parameters.
+            </summary>
+        </member>
+        <member name="P:UtilPack.TabularData.DataRowMetaData.ColumnCount">
+            <summary>
+            Gets the amount of columns of the <see cref="T:UtilPack.TabularData.AsyncDataRow"/> this <see cref="T:UtilPack.TabularData.DataRowMetaData"/> was obtained from.
+            </summary>
+            <value>The amount of columns of the <see cref="T:UtilPack.TabularData.AsyncDataRow"/> this <see cref="T:UtilPack.TabularData.DataRowMetaData"/> was obtained from.</value>
+        </member>
+        <member name="M:UtilPack.TabularData.DataRowMetaData.GetIndexFor(System.String)">
+            <summary>
+            Tries to get the index for labeled column.
+            </summary>
+            <param name="columnName">The label for column.</param>
+            <returns>The index for given column label, or <c>null</c> if this row has no column with given label.</returns>
+        </member>
+        <member name="T:UtilPack.TabularData.DataRowMetaData`1">
+            <summary>
+            This interface provides API to query information about the structure of the <see cref="T:UtilPack.TabularData.AsyncDataRow"/> object, and the data that the <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> objects contain.
+            </summary>
+            <typeparam name="TColumnMetaData">The actual type of column metadata, must be subtype of <see cref="T:UtilPack.TabularData.DataColumnMetaData"/>.</typeparam>
+        </member>
+        <member name="M:UtilPack.TabularData.DataRowMetaData`1.GetColumnMetaData(System.Int32)">
+            <summary>
+            Gets the <see cref="T:UtilPack.TabularData.DataColumnMetaData"/> for column at given index.
+            </summary>
+            <param name="columnIndex">The column index.</param>
+            <returns>An instance of <see cref="T:UtilPack.TabularData.DataColumnMetaData"/> describing the data in given column.</returns>
+            <exception cref="T:System.ArgumentException">If no column exists for given <paramref name="columnIndex"/>.</exception>
+        </member>
+        <member name="T:UtilPack.TabularData.DataColumnMetaData">
+            <summary>
+            This interface provides API to query information about the data contained in single <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> object.
+            </summary>
+        </member>
+        <member name="P:UtilPack.TabularData.DataColumnMetaData.ColumnCLRType">
+            <summary>
+            Gets the <see cref="T:System.Type"/> of the data contained in the <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> this <see cref="T:UtilPack.TabularData.DataColumnMetaData"/> was obtained from.
+            </summary>
+            <value>The <see cref="T:System.Type"/> of the data contained in the <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> this <see cref="T:UtilPack.TabularData.DataColumnMetaData"/> was obtained from.</value>
+        </member>
+        <member name="M:UtilPack.TabularData.DataColumnMetaData.ChangeType(System.Object,System.Type)">
+            <summary>
+            Tries to perform conversion of the column value to given target type.
+            </summary>
+            <param name="value">The data that was acquired from <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> this <see cref="T:UtilPack.TabularData.DataColumnMetaData"/> was obtained from.</param>
+            <param name="targetType">The type to transform the <paramref name="value"/> to.</param>
+            <returns>An object that is assignalbe to <paramref name="targetType"/>.</returns>
+            <remarks>
+            If the cast is invalid, an exception should be thrown.
+            This interface does not specify which exception should be then thrown.
+            </remarks>
+        </member>
+        <member name="P:UtilPack.TabularData.DataColumnMetaData.Label">
+            <summary>
+            Gets the possible column label for the <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> this <see cref="T:UtilPack.TabularData.DataColumnMetaData"/> was obtained from.
+            </summary>
+            <value>The possible column label for the <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> this <see cref="T:UtilPack.TabularData.DataColumnMetaData"/> was obtained from.</value>
+        </member>
+        <member name="T:UtilPack.TabularData.AsyncDataColumnMetaData">
+            <summary>
+            This interface extends <see cref="T:UtilPack.TabularData.DataColumnMetaData"/> to provide functionality which is specific for <see cref="T:UtilPack.TabularData.AsyncDataColumn"/>.
+            </summary>
+        </member>
+        <member name="M:UtilPack.TabularData.AsyncDataColumnMetaData.ConvertFromBytesAsync(System.IO.Stream,System.Int32)">
+            <summary>
+            Tries to asynchronously convert the raw byte data into .NET data object.
+            </summary>
+            <param name="stream">The stream containing raw byte data representation.</param>
+            <param name="byteCount">The amount of bytes to read from the stream.</param>
+            <returns>A task which on completion will have .NET data object.</returns>
+            <remarks>
+            If data is malformed, an exception should be thrown.
+            </remarks>
+        </member>
+        <member name="T:UtilPack.TabularData.AsyncDataColumn">
+            <summary>
+            This interface provides querying data of single column of single <see cref="T:UtilPack.TabularData.AsyncDataRow"/> object.
+            </summary>
+        </member>
+        <member name="M:UtilPack.TabularData.AsyncDataColumn.TryGetValueAsync">
+            <summary>
+            Tries asynchronously to get the data of this <see cref="T:UtilPack.TabularData.AsyncDataColumn"/>.
+            </summary>
+            <returns>A task which will on completion contain <see cref="T:UtilPack.ResultOrNone`1"/> struct describing the data.</returns>
+            <seealso cref="T:UtilPack.ResultOrNone`1"/>
+            <remarks>
+            If value reading has already been started by <see cref="M:UtilPack.TabularData.AsyncDataColumn.ReadBytesAsync(System.Byte[],System.Int32,System.Int32)"/> method and not yet finished, this method will return <see cref="T:UtilPack.ResultOrNone`1"/> such that its <see cref="P:UtilPack.ResultOrNone`1.HasResult"/> property is <c>false</c>.
+            If value has already been previously read by this method, it is returned as <see cref="T:System.Threading.Tasks.ValueTask`1"/> synchronously.
+            </remarks>
+        </member>
+        <member name="M:UtilPack.TabularData.AsyncDataColumn.ReadBytesAsync(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Tries to asynchronously read data as raw bytes into given byte array.
+            </summary>
+            <param name="array">The byte array where to read the data to.</param>
+            <param name="offset">The offset in <paramref name="array"/> where to start writing bytes.</param>
+            <param name="count">The maximum amount of bytes to write.</param>
+            <returns>Amount of bytes written to array, or <c>-1</c> if <see cref="M:UtilPack.TabularData.AsyncDataColumn.TryGetValueAsync"/> has been invoked concurrently, or <c>0</c> if end of data has been encountered, or <c>null</c> if this method has been invoked concurrently.</returns>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="array"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">If <paramref name="offset"/> or <paramref name="count"/> is less than <c>0</c>, or if array length is smaller than <paramref name="offset"/> <c>+</c> <paramref name="count"/>.</exception>
+            <exception cref="T:System.ArgumentException">If <paramref name="offset"/> + <paramref name="count"/> is greater than array length.</exception>
+        </member>
+        <member name="T:UtilPack.TabularData.AbstractDataColumn">
+            <summary>
+            This is common interface for <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> and synchronous data column interface, which is still under development.
+            </summary>
+        </member>
+        <member name="P:UtilPack.TabularData.AbstractDataColumn.MetaData">
+            <summary>
+            Gets the <see cref="T:UtilPack.TabularData.DataColumnMetaData"/> of this <see cref="T:UtilPack.TabularData.AsyncDataColumn"/>.
+            </summary>
+            <value>The <see cref="T:UtilPack.TabularData.DataColumnMetaData"/> of this <see cref="T:UtilPack.TabularData.AsyncDataColumn"/>.</value>
+        </member>
+        <member name="P:UtilPack.TabularData.AbstractDataColumn.ColumnIndex">
+            <summary>
+            Gets the index of this <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> in <see cref="T:UtilPack.TabularData.AsyncDataRow"/> this was obtained from.
+            </summary>
+            <value>The index of this <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> in <see cref="T:UtilPack.TabularData.AsyncDataRow"/> this was obtained from.</value>
+        </member>
+        <member name="T:UtilPack.TabularData.AsyncDataRowImpl">
+            <summary>
+            This class implements <see cref="T:UtilPack.TabularData.AsyncDataRow"/> in most straightforward way, with <c>0</c>-based indexing..
+            </summary>
+        </member>
+        <member name="M:UtilPack.TabularData.AsyncDataRowImpl.#ctor(UtilPack.TabularData.DataRowMetaData{UtilPack.TabularData.AsyncDataColumnMetaData},UtilPack.TabularData.AsyncDataColumn[])">
+            <summary>
+            Creates a new instance of <see cref="T:UtilPack.TabularData.AsyncDataRowImpl"/> with given <see cref="T:UtilPack.TabularData.DataRowMetaData`1"/> and <see cref="T:UtilPack.TabularData.AsyncDataColumn"/>s.
+            </summary>
+            <param name="rowMetadata">The <see cref="T:UtilPack.TabularData.DataRowMetaData`1"/> for this <see cref="T:UtilPack.TabularData.AsyncDataRowImpl"/>.</param>
+            <param name="columns">The array of <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> objects as columns of this data row.</param>
+            <exception cref="T:System.ArgumentNullException">If either of <paramref name="columns"/> or <paramref name="rowMetadata"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:UtilPack.TabularData.AsyncDataRowImpl.GetColumn(System.Int32)">
+            <summary>
+            Implements the <see cref="M:UtilPack.TabularData.DataRow`2.GetColumn(System.Int32)"/> method.
+            </summary>
+            <param name="index">The <c>0</c>-based column index.</param>
+            <returns>The <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> at given <c>0</c>-basd index in <see cref="P:UtilPack.TabularData.AsyncDataRowImpl.Columns"/> array.</returns>
+            <exception cref="T:System.ArgumentException">If <paramref name="index"/> is less than <c>0</c> or greater or equal to length of <see cref="P:UtilPack.TabularData.AsyncDataRowImpl.Columns"/> array.</exception>
+        </member>
+        <member name="P:UtilPack.TabularData.AsyncDataRowImpl.Metadata">
+            <summary>
+            Implements the <see cref="P:UtilPack.TabularData.DataRow`2.Metadata"/> property.
+            </summary>
+            <value>The <see cref="T:UtilPack.TabularData.DataRowMetaData`1"/> of this <see cref="T:UtilPack.TabularData.AsyncDataRowImpl"/>.</value>
+        </member>
+        <member name="P:UtilPack.TabularData.AsyncDataRowImpl.Columns">
+            <summary>
+            Gets the array of <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> objects.
+            </summary>
+            <value>The array of <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> objects.</value>
+        </member>
+        <member name="T:UtilPack.TabularData.AbstractAsyncDataColumn">
+            <summary>
+            This class implements <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> in such way that it is agnostic to underlying implementation, but provides constraints regarding to concurrent invocation of methods.
+            </summary>
+        </member>
+        <member name="M:UtilPack.TabularData.AbstractAsyncDataColumn.#ctor(UtilPack.TabularData.DataColumnMetaData,System.Int32)">
+            <summary>
+            Initializes a new instance of <see cref="T:UtilPack.TabularData.AbstractAsyncDataColumn"/> with given parameters.
+            </summary>
+            <param name="metadata">The column <see cref="T:UtilPack.TabularData.DataColumnMetaData"/>.</param>
+            <param name="columnIndex">The index of this column in <see cref="T:UtilPack.TabularData.AsyncDataRow"/> it was obtained from.</param>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="metadata"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:UtilPack.TabularData.AbstractAsyncDataColumn.TryGetValueAsync">
+            <summary>
+            This method implements <see cref="M:UtilPack.TabularData.AsyncDataColumn.TryGetValueAsync"/> method.
+            </summary>
+            <returns>A task which will on completion contain <see cref="T:UtilPack.ResultOrNone`1"/> struct describing the data.</returns>
+            <seealso cref="T:UtilPack.ResultOrNone`1"/>
+            <remarks>
+            If value reading has already been started by <see cref="M:UtilPack.TabularData.AbstractAsyncDataColumn.ReadBytesAsync(System.Byte[],System.Int32,System.Int32)"/> method and not yet finished, this method will return <see cref="T:UtilPack.ResultOrNone`1"/> such that its <see cref="P:UtilPack.ResultOrNone`1.HasResult"/> property is <c>false</c>.
+            </remarks>
+        </member>
+        <member name="M:UtilPack.TabularData.AbstractAsyncDataColumn.ReadBytesAsync(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="array">The byte array where to read the data to.</param>
+            <param name="offset">The offset in <paramref name="array"/> where to start writing bytes.</param>
+            <param name="count">The maximum amount of bytes to write.</param>
+            <returns>Amount of bytes written to array, or <c>-1</c> if <see cref="M:UtilPack.TabularData.AbstractAsyncDataColumn.TryGetValueAsync"/> has been invoked concurrently, or <c>0</c> if end of data has been encountered, or <c>null</c> if this method has been invoked concurrently.</returns>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="array"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">If <paramref name="offset"/> or <paramref name="count"/> is less than <c>0</c>, or if array length is smaller than <paramref name="offset"/> <c>+</c> <paramref name="count"/>.</exception>
+            <exception cref="T:System.ArgumentException">If <paramref name="offset"/> + <paramref name="count"/> is greater than array length.</exception>
+        </member>
+        <member name="P:UtilPack.TabularData.AbstractAsyncDataColumn.MetaData">
+            <summary>
+            Implements <see cref="P:UtilPack.TabularData.AbstractDataColumn.MetaData"/> property.
+            Gets the <see cref="T:UtilPack.TabularData.DataColumnMetaData"/> of this <see cref="T:UtilPack.TabularData.AbstractAsyncDataColumn"/>.
+            </summary>
+            <value>The <see cref="T:UtilPack.TabularData.DataColumnMetaData"/> of this <see cref="T:UtilPack.TabularData.AbstractAsyncDataColumn"/>.</value>
+        </member>
+        <member name="P:UtilPack.TabularData.AbstractAsyncDataColumn.ColumnIndex">
+            <summary>
+            Implements <see cref="P:UtilPack.TabularData.AbstractDataColumn.ColumnIndex"/> property.
+            Gets the index of this <see cref="T:UtilPack.TabularData.AbstractAsyncDataColumn"/> in <see cref="T:UtilPack.TabularData.AsyncDataRow"/> it was obtained from.
+            </summary>
+            <value>The index of this <see cref="T:UtilPack.TabularData.AbstractAsyncDataColumn"/> in <see cref="T:UtilPack.TabularData.AsyncDataRow"/> it was obtained from.</value>
+        </member>
+        <member name="M:UtilPack.TabularData.AbstractAsyncDataColumn.PerformReadAsValueAsync">
+            <summary>
+            This method should be overridden in derived class, and is called by <see cref="M:UtilPack.TabularData.AbstractAsyncDataColumn.TryGetValueAsync"/> after concurrency checks pass and value is not cached.
+            </summary>
+            <returns>A task which should return the data on completion.</returns>
+        </member>
+        <member name="M:UtilPack.TabularData.AbstractAsyncDataColumn.PerformReadToBytes(System.Byte[],System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            This method should be overridden in derived class, and is called by <see cref="M:UtilPack.TabularData.AbstractAsyncDataColumn.ReadBytesAsync(System.Byte[],System.Int32,System.Int32)"/> after checks for concurrency and parameters pass.
+            </summary>
+            <param name="array">The byte array where to read the data to.</param>
+            <param name="offset">The offset in <paramref name="array"/> where to start writing bytes.</param>
+            <param name="count">The maximum amount of bytes to write.</param>
+            <param name="isInitialRead">Whether this is first call to <see cref="M:UtilPack.TabularData.AbstractAsyncDataColumn.ReadBytesAsync(System.Byte[],System.Int32,System.Int32)"/> method.</param>
+            <returns>A task which should return how many bytes has written to <paramref name="array"/>, and whether whole data reading is complete.</returns>
+        </member>
+        <member name="M:UtilPack.TabularData.AbstractAsyncDataColumn.Reset">
+            <summary>
+            Derived classes may call and override this method to implement state-reset.
+            Doing this causes cached value to be ignored on next call to <see cref="M:UtilPack.TabularData.AbstractAsyncDataColumn.TryGetValueAsync"/>.
+            </summary>
+        </member>
+        <member name="T:UtilPack.TabularData.DataRowMetaDataImpl`1">
+            <summary>
+            This class provides straightforward implementation for <see cref="T:UtilPack.TabularData.DataRowMetaData`1"/> using <c>0</c>-based column indexing.
+            </summary>
+        </member>
+        <member name="M:UtilPack.TabularData.DataRowMetaDataImpl`1.#ctor(`0[])">
+            <summary>
+            Creates a new instance of <see cref="T:UtilPack.TabularData.DataRowMetaDataImpl`1"/> with given column metadata objects.
+            </summary>
+            <param name="columnMetaDatas">The arra of <see cref="T:UtilPack.TabularData.DataColumnMetaData"/> objects.</param>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="columnMetaDatas"/> is <c>null</c>.</exception>
+        </member>
+        <member name="P:UtilPack.TabularData.DataRowMetaDataImpl`1.ColumnCount">
+            <summary>
+            This property implements <see cref="P:UtilPack.TabularData.DataRowMetaData.ColumnCount"/>.
+            Gets the amount of column objects in <see cref="P:UtilPack.TabularData.DataRowMetaDataImpl`1.ColumnMetaDatas"/> array.
+            </summary>
+            <value>The amount of column objects in <see cref="P:UtilPack.TabularData.DataRowMetaDataImpl`1.ColumnMetaDatas"/> array.</value>
+        </member>
+        <member name="M:UtilPack.TabularData.DataRowMetaDataImpl`1.GetIndexFor(System.String)">
+            <summary>
+            This method implements the <see cref="M:UtilPack.TabularData.DataRowMetaData.GetIndexFor(System.String)"/> method.
+            Tries to get an index for column with given label.
+            </summary>
+            <param name="columnName">The column label.</param>
+            <returns>Index of column with given label. Will return <c>null</c> if <paramref name="columnName"/> is <c>null</c> or if column with given label does not exist in the <see cref="T:UtilPack.TabularData.DataRow`2"/> this <see cref="T:UtilPack.TabularData.DataRowMetaDataImpl`1"/> was obtained from.</returns>
+        </member>
+        <member name="P:UtilPack.TabularData.DataRowMetaDataImpl`1.ColumnMetaDatas">
+            <summary>
+            Gets the array of <see cref="T:UtilPack.TabularData.DataColumnMetaData"/> objects.
+            </summary>
+            <value>the array of <see cref="T:UtilPack.TabularData.DataColumnMetaData"/> objects.</value>
+        </member>
+        <member name="M:UtilPack.TabularData.DataRowMetaDataImpl`1.GetColumnMetaData(System.Int32)">
+            <summary>
+            Implements <see cref="M:UtilPack.TabularData.DataRowMetaData`1.GetColumnMetaData(System.Int32)"/>
+            Gets the <see cref="T:UtilPack.TabularData.DataColumnMetaData"/> for given column index.
+            </summary>
+            <param name="columnIndex">The index of the column in <see cref="P:UtilPack.TabularData.DataRowMetaDataImpl`1.ColumnMetaDatas"/> array.</param>
+            <returns>The element at given index in <see cref="P:UtilPack.TabularData.DataRowMetaDataImpl`1.ColumnMetaDatas"/> array.</returns>
+            <exception cref="T:System.ArgumentException">If <paramref name="columnIndex"/> is lesser than zero or greater or equal to the length of <see cref="P:UtilPack.TabularData.DataRowMetaDataImpl`1.ColumnMetaDatas"/> array.</exception>
+        </member>
+        <member name="T:UtilPack.TabularData.AbstractDataColumnMetaData">
+            <summary>
+            This class provides straightforward implementation for <see cref="T:UtilPack.TabularData.DataColumnMetaData"/>.
+            The <see cref="P:UtilPack.TabularData.AbstractDataColumnMetaData.ColumnCLRType"/> and <see cref="P:UtilPack.TabularData.AbstractDataColumnMetaData.Label"/> are read-only properties, and the <see cref="M:UtilPack.TabularData.AbstractDataColumnMetaData.ChangeType(System.Object,System.Type)"/> method is left <c>abstract</c>.
+            </summary>
+        </member>
+        <member name="M:UtilPack.TabularData.AbstractDataColumnMetaData.#ctor(System.Type,System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:UtilPack.TabularData.AbstractDataColumnMetaData"/> with fixed type and label information about the data.
+            </summary>
+            <param name="type">The CLR <see cref="T:System.Type"/> of the column data.</param>
+            <param name="label">The column label. May be <c>null</c>.</param>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="type"/> is <c>null</c>.</exception>
+        </member>
+        <member name="P:UtilPack.TabularData.AbstractDataColumnMetaData.ColumnCLRType">
+            <summary>
+            Implements <see cref="P:UtilPack.TabularData.DataColumnMetaData.ColumnCLRType"/> property.
+            Gets the CLR <see cref="T:System.Type"/> of the column data.
+            </summary>
+            <value>The CLR <see cref="T:System.Type"/> of the column data.</value>
+        </member>
+        <member name="P:UtilPack.TabularData.AbstractDataColumnMetaData.Label">
+            <summary>
+            Implements <see cref="P:UtilPack.TabularData.DataColumnMetaData.Label"/> property.
+            Gets the textual column label. May be <c>null</c>.
+            </summary>
+            <value>The textual column label. May be <c>null</c>.</value>
+        </member>
+        <member name="M:UtilPack.TabularData.AbstractDataColumnMetaData.ChangeType(System.Object,System.Type)">
+            <summary>
+            Implements signature of <see cref="M:UtilPack.TabularData.DataColumnMetaData.ChangeType(System.Object,System.Type)"/> method, but leaves implementation for derived classes.
+            </summary>
+            <param name="value">The data that was acquired from <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> this <see cref="T:UtilPack.TabularData.DataColumnMetaData"/> was obtained from.</param>
+            <param name="targetType">The type to transform the <paramref name="value"/> to.</param>
+            <returns>An object that is assignalbe to <paramref name="targetType"/>.</returns>
+            <remarks>
+            If the cast is invalid, an exception should be thrown.
+            This interface does not specify which exception should be then thrown.
+            </remarks>
+        </member>
+        <member name="T:UtilPack.TabularData.AbstractAsyncDataColumnMetaData">
+            <summary>
+            This class provides straightforward implementation for <see cref="T:UtilPack.TabularData.AsyncDataColumnMetaData"/>, by extending <see cref="T:UtilPack.TabularData.AbstractDataColumnMetaData"/> and leaving <see cref="M:UtilPack.TabularData.AbstractAsyncDataColumnMetaData.ConvertFromBytesAsync(System.IO.Stream,System.Int32)"/> method <c>abstract</c>.
+            </summary>
+        </member>
+        <member name="M:UtilPack.TabularData.AbstractAsyncDataColumnMetaData.#ctor(System.Type,System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:UtilPack.TabularData.AbstractAsyncDataColumnMetaData"/> with fixed type and label information about the data.
+            </summary>
+            <param name="type">The CLR <see cref="T:System.Type"/> of the column data.</param>
+            <param name="label">The column label. May be <c>null</c>.</param>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="type"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:UtilPack.TabularData.AbstractAsyncDataColumnMetaData.ConvertFromBytesAsync(System.IO.Stream,System.Int32)">
+            <summary>
+            Implements signature of <see cref="M:UtilPack.TabularData.AsyncDataColumnMetaData.ConvertFromBytesAsync(System.IO.Stream,System.Int32)"/> method, but leaves implementation for derived classes.
+            </summary>
+            <param name="stream">The stream containing raw byte data representation.</param>
+            <param name="byteCount">The amount of bytes to read from the stream.</param>
+            <returns>A task which on completion will have .NET data object.</returns>
+            <remarks>
+            If data is malformed, an exception should be thrown.
+            </remarks>
+        </member>
+        <member name="T:UtilPack.TabularData.DataColumnSUKS">
+            <summary>
+            This class extends <see cref="T:UtilPack.TabularData.AbstractAsyncDataColumn"/> to provide some common functionality when data originates from <see cref="T:System.IO.Stream"/> which is unseekable but of known size (=<c>SUKS</c>).
+            </summary>
+        </member>
+        <member name="M:UtilPack.TabularData.DataColumnSUKS.#ctor(UtilPack.TabularData.DataColumnMetaData,System.Int32,UtilPack.TabularData.AsyncDataColumn)">
+            <summary>
+            Initializes a new instance of <see cref="T:UtilPack.TabularData.DataColumnSUKS"/> with given parameters.
+            </summary>
+            <param name="metadata">The column <see cref="T:UtilPack.TabularData.DataColumnMetaData"/>.</param>
+            <param name="columnIndex">The index of this column in <see cref="T:UtilPack.TabularData.AsyncDataRow"/> it was obtained from.</param>
+            <param name="previousColumn">The previous <see cref="T:UtilPack.TabularData.DataColumnSUKS"/> column of the <see cref="T:UtilPack.TabularData.AsyncDataRow"/> this belongs to.</param>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="metadata"/> is <c>null</c>, or if <paramref name="columnIndex"/> is greater than <c>0</c> but <paramref name="previousColumn"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:UtilPack.TabularData.DataColumnSUKS.PerformReadAsValueAsync">
+            <summary>
+            Overrides <see cref="M:UtilPack.TabularData.AbstractAsyncDataColumn.PerformReadAsValueAsync"/> to first force all previous columns to be read by calling <see cref="M:E_UtilPack.SkipBytesAsync(UtilPack.TabularData.AsyncDataColumn,System.Byte[])"/> method for previous column, if it was given.
+            Then, the amount of bytes the data takes is read from the stream by calling <see cref="M:UtilPack.TabularData.DataColumnSUKS.ReadByteCountAsync"/> method.
+            If the byte count is greater or equal to <c>0</c>, then the <see cref="M:UtilPack.TabularData.DataColumnSUKS.ReadValueAsync(System.Int32)"/> method is called to read actual value, and that is returned.
+            Otherwise, <c>null</c> is returned.
+            </summary>
+            <returns>A task which on completion will have the value of <see cref="M:UtilPack.TabularData.DataColumnSUKS.ReadValueAsync(System.Int32)"/> or <c>null</c>.</returns>
+            <remarks>
+            The values of all previous columns are forced to read because the underlying <see cref="T:System.IO.Stream"/> is assumed to be unseekable.
+            Therefore, if user first tries to get value of e.g. 3rd column, the 1st and 2nd column values must be read before that in order for the stream to be in correct position to read value for 3rd column.
+            </remarks>
+        </member>
+        <member name="M:UtilPack.TabularData.DataColumnSUKS.PerformReadToBytes(System.Byte[],System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Overrides <see cref="M:UtilPack.TabularData.AbstractAsyncDataColumn.PerformReadToBytes(System.Byte[],System.Int32,System.Int32,System.Boolean)"/> to first, if <paramref name="isInitialRead"/> is <c>true</c>, force all previous columns to be read by calling <see cref="M:E_UtilPack.SkipBytesAsync(UtilPack.TabularData.AsyncDataColumn,System.Byte[])"/> method for previous column, if it was given.
+            Then, if <paramref name="isInitialRead"/> is <c>true</c>, the amount of bytes the data takes is read from the stream by calling <see cref="M:UtilPack.TabularData.DataColumnSUKS.ReadByteCountAsync"/> method.
+            Otherwise the byte count is what was calculated to remain from previous <see cref="M:UtilPack.TabularData.DataColumnSUKS.PerformReadToBytes(System.Byte[],System.Int32,System.Int32,System.Boolean)"/>.
+            If the byte count is greater or equal to <c>0</c>, then the <see cref="M:UtilPack.TabularData.DataColumnSUKS.ReadValueAsync(System.Int32)"/> method is called, and the return value of that is returned.
+            Otherwise, <c>0</c> is returned.
+            </summary>
+            <param name="array">The byte array where to read the data to.</param>
+            <param name="offset">The offset in <paramref name="array"/> where to start writing bytes.</param>
+            <param name="count">The maximum amount of bytes to write.</param>
+            <param name="isInitialRead">Whether this is first call to <see cref="M:UtilPack.TabularData.AbstractAsyncDataColumn.ReadBytesAsync(System.Byte[],System.Int32,System.Int32)"/> method.</param>
+            <returns>A task which returns how many bytes has written to <paramref name="array"/>, and whether whole data reading is complete.</returns>
+            <remarks>
+            The values of all previous columns are forced to read because the underlying <see cref="T:System.IO.Stream"/> is assumed to be unseekable.
+            Therefore, if user first tries to get value of e.g. 3rd column, the 1st and 2nd column values must be read before that in order for the stream to be in correct position to read value for 3rd column.
+            </remarks>
+        </member>
+        <member name="M:UtilPack.TabularData.DataColumnSUKS.ReadByteCountAsync">
+            <summary>
+            This method is called by both <see cref="M:UtilPack.TabularData.DataColumnSUKS.PerformReadAsValueAsync"/> and <see cref="M:UtilPack.TabularData.DataColumnSUKS.PerformReadToBytes(System.Byte[],System.Int32,System.Int32,System.Boolean)"/> methods, to get the amount of bytes that data for this column takes.
+            </summary>
+            <returns>A task which should return the amount of bytes that data of this column takes.</returns>
+        </member>
+        <member name="M:UtilPack.TabularData.DataColumnSUKS.ReadValueAsync(System.Int32)">
+            <summary>
+            This method is called by <see cref="M:UtilPack.TabularData.DataColumnSUKS.PerformReadAsValueAsync"/> in order to deserialize the data from underlying <see cref="T:System.IO.Stream"/> to actual value.
+            </summary>
+            <param name="byteCount">The amount of bytes the data takes, as returned by <see cref="M:UtilPack.TabularData.DataColumnSUKS.ReadByteCountAsync"/> method.</param>
+            <returns>A task which should return the deserialized data object.</returns>
+        </member>
+        <member name="M:UtilPack.TabularData.DataColumnSUKS.DoReadFromStreamAsync(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            This method is called by <see cref="M:UtilPack.TabularData.DataColumnSUKS.PerformReadToBytes(System.Byte[],System.Int32,System.Int32,System.Boolean)"/> in order to read data as raw bytes from underlying <see cref="T:System.IO.Stream"/>.
+            </summary>
+            <param name="array">The byte array where to read the data to.</param>
+            <param name="offset">The offset in <paramref name="array"/> where to start writing bytes.</param>
+            <param name="count">The maximum amount of bytes to write.</param>
+            <returns>The amount of bytes read.</returns>
+            <remarks>
+            The <see cref="M:UtilPack.TabularData.DataColumnSUKS.PerformReadToBytes(System.Byte[],System.Int32,System.Int32,System.Boolean)"/> will take care of putting up correct <paramref name="count"/> value.
+            </remarks>
+        </member>
+        <member name="M:UtilPack.TabularData.DataColumnSUKS.Reset">
+            <summary>
+            This method overrides <see cref="M:UtilPack.TabularData.AbstractAsyncDataColumn.Reset"/> in order to perform resetting the private state of this <see cref="T:UtilPack.TabularData.DataColumnSUKS"/> in addition to private state of <see cref="T:UtilPack.TabularData.AbstractAsyncDataColumn"/>.
+            </summary>
+        </member>
+        <member name="T:E_UtilPack">
+            <summary>
+            This class contains extensions methods for types defined in this library.
+            </summary>
+            <summary>
+            This class contains extension methods for types defined in this assembly.
+            </summary>
+        </member>
+        <member name="M:E_UtilPack.GetValueAsync(UtilPack.TabularData.AsyncDataRow,System.Int32,System.Type)">
+            <summary>
+            Helper method to asynchronously get value from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>, and cast the value to given type.
+            </summary>
+            <param name="row">This <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</param>
+            <param name="index">The index of column holding the value.</param>
+            <param name="type">The type to cast value to.</param>
+            <returns>A task which will on completion contain casted value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.GetValueAsync``1(UtilPack.TabularData.AsyncDataRow,System.Int32)">
+            <summary>
+            Helper method to asynchronously get value from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>, and cast the value to given type., which is known at compile time.
+            </summary>
+            <typeparam name="T">The type to cast value to.</typeparam>
+            <param name="row">This <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</param>
+            <param name="index">The index of column holding the value.</param>
+            <returns>A task which will on completion contain casted value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.GetValueAsObjectAsync(UtilPack.TabularData.AsyncDataRow,System.Int32)">
+            <summary>
+            Helper method to asynchronously get value as is from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>, and the value as <see cref="T:System.Object"/>.
+            </summary>
+            <param name="row">This <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</param>
+            <param name="index">The index of column holding the value.</param>
+            <returns>A task which will on completion contain casted value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.GetValueAsync(UtilPack.TabularData.AsyncDataColumn,System.Type)">
+            <summary>
+            Helper method to asynchronously try to get value and cast it to given type, or throw an exception if value can not be fetched or cast is invalid.
+            </summary>
+            <param name="column">This <see cref="T:UtilPack.TabularData.AsyncDataColumn"/>.</param>
+            <param name="type">The type to cast value to.</param>
+            <returns>A task which will on completion contain casted value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> is <c>null</c>.</exception>
+            <exception cref="T:System.InvalidOperationException">If fetching value fails (<see cref="M:UtilPack.TabularData.AsyncDataColumn.TryGetValueAsync"/> method returns such <see cref="T:UtilPack.ResultOrNone`1"/> that its <see cref="P:UtilPack.ResultOrNone`1.HasResult"/> property is <c>false</c>).</exception>
+        </member>
+        <member name="M:E_UtilPack.GetValueAsync``1(UtilPack.TabularData.AsyncDataColumn)">
+            <summary>
+            Helper method to asynchronously try to get value and cast it to given type, which is known at compile time, or throw an exception if value can not be fetched or cast is invalid.
+            </summary>
+            <typeparam name="T">The type to cast value to.</typeparam>
+            <param name="column">This <see cref="T:UtilPack.TabularData.AsyncDataColumn"/>.</param>
+            <returns>A task which will on completion contain casted value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> is <c>null</c>.</exception>
+            <exception cref="T:System.InvalidOperationException">If fetching value fails (<see cref="M:UtilPack.TabularData.AsyncDataColumn.TryGetValueAsync"/> method returns such <see cref="T:UtilPack.ResultOrNone`1"/> that its <see cref="P:UtilPack.ResultOrNone`1.HasResult"/> property is <c>false</c>).</exception>
+        </member>
+        <member name="M:E_UtilPack.GetValueAsObjectAsync(UtilPack.TabularData.AsyncDataColumn)">
+            <summary>
+            Helper method to asynchronously try to get value as is and return it as <see cref="T:System.Object"/>, or throw an exception if value can not be fetched or cast is invalid.
+            </summary>
+            <param name="column">This <see cref="T:UtilPack.TabularData.AsyncDataColumn"/>.</param>
+            <returns>A task which will on completion contain casted value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.TabularData.AsyncDataColumn"/> is <c>null</c>.</exception>
+            <exception cref="T:System.InvalidOperationException">If fetching value fails (<see cref="M:UtilPack.TabularData.AsyncDataColumn.TryGetValueAsync"/> method returns such <see cref="T:UtilPack.ResultOrNone`1"/> that its <see cref="P:UtilPack.ResultOrNone`1.HasResult"/> property is <c>false</c>).</exception>
+        </member>
+        <member name="M:E_UtilPack.GetValueAsync(UtilPack.TabularData.AsyncDataRow,System.String,System.Type)">
+            <summary>
+            Helper method to asynchronously get value from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>, and cast the value to given type.
+            </summary>
+            <param name="row">This <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</param>
+            <param name="columnLabel">The label of column holding the value.</param>
+            <param name="type">The type to cast value to.</param>
+            <returns>A task which will on completion contain casted value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">If column labeled as <paramref name="columnLabel"/> is not present in this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</exception>
+        </member>
+        <member name="M:E_UtilPack.GetValueAsync``1(UtilPack.TabularData.AsyncDataRow,System.String)">
+            <summary>
+            Helper method to asynchronously get value from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>, and cast the value to given type., which is known at compile time.
+            </summary>
+            <typeparam name="T">The type to cast value to.</typeparam>
+            <param name="row">This <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</param>
+            <param name="columnLabel">The label of column holding the value.</param>
+            <returns>A task which will on completion contain casted value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">If column labeled as <paramref name="columnLabel"/> is not present in this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</exception>
+        </member>
+        <member name="M:E_UtilPack.GetValueAsObjectAsync(UtilPack.TabularData.AsyncDataRow,System.String)">
+            <summary>
+            Helper method to asynchronously get value as is from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>, and the value as <see cref="T:System.Object"/>.
+            </summary>
+            <param name="row">This <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</param>
+            <param name="columnLabel">The label of column holding the value.</param>
+            <returns>A task which will on completion contain casted value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">If column labeled as <paramref name="columnLabel"/> is not present in this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</exception>
+        </member>
+        <member name="M:E_UtilPack.GetIndexOrThrow``1(UtilPack.TabularData.DataRowMetaData{``0},System.String)">
+            <summary>
+            Helper method to try to get index for given column label, or throw an exception.
+            </summary>
+            <typeparam name="TColumnMetaData">The type of column meta data.</typeparam>
+            <param name="rowMD">This <see cref="T:UtilPack.TabularData.DataRowMetaData`1"/>.</param>
+            <param name="columnLabel">The label of the column.</param>
+            <returns>An index for column with given label.</returns>
+            <exception cref="T:System.ArgumentException">If <paramref name="columnLabel"/> is <c>null</c> or if column with such label is not present in row this <see cref="T:UtilPack.TabularData.DataRowMetaData`1"/> was obtained from.</exception>
+        </member>
+        <member name="M:E_UtilPack.TransformToTuple``1(UtilPack.TabularData.AsyncDataRow,System.Int32)">
+            <summary>
+            Asynchronously retrieves 1 value from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> and transforms it into a <see cref="T:System.ValueTuple`1"/>.
+            </summary>
+            <typeparam name="T1">The type of the value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <param name="row">This <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</param>
+            <param name="index">The index at which to get the value.</param>
+            <returns>Potentially asynchronously returns a <see cref="T:System.ValueTuple`1"/> containing the retrieved value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">If the <paramref name="index"/> is out of range for this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</exception>
+        </member>
+        <member name="M:E_UtilPack.TransformToTuple``2(UtilPack.TabularData.AsyncDataRow,System.Int32)">
+            <summary>
+            Asynchronously retrieves 2 subsequent values from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> and transforms them into a <see cref="T:System.ValueTuple`2"/>.
+            </summary>
+            <typeparam name="T1">The type of the first value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T2">The type of the second value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <param name="row">This <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</param>
+            <param name="startIndex">The index at which to get the first value. The second value is retrieved from subsequent index (<paramref name="startIndex"/> + 1).</param>
+            <returns>Potentially asynchronously returns a <see cref="T:System.ValueTuple`2"/> containing the retrieved value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">If any of the value indices is out of range for this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</exception>
+        </member>
+        <member name="M:E_UtilPack.TransformToTuple``3(UtilPack.TabularData.AsyncDataRow,System.Int32)">
+            <summary>
+            Asynchronously retrieves 3 subsequent values from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> and transforms them into a <see cref="T:System.ValueTuple`3"/>.
+            </summary>
+            <typeparam name="T1">The type of the first value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T2">The type of the second value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T3">The type of the third value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <param name="row">This <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</param>
+            <param name="startIndex">The index at which to get the first value. The rest of the values are retrieved from subsequent indices.</param>
+            <returns>Potentially asynchronously returns a <see cref="T:System.ValueTuple`3"/> containing the retrieved value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">If any of the value indices is out of range for this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</exception>
+        </member>
+        <member name="M:E_UtilPack.TransformToTuple``4(UtilPack.TabularData.AsyncDataRow,System.Int32)">
+            <summary>
+            Asynchronously retrieves 4 subsequent values from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> and transforms them into a <see cref="T:System.ValueTuple`4"/>.
+            </summary>
+            <typeparam name="T1">The type of the first value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T2">The type of the second value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T3">The type of the third value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T4">The type of the fourth value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <param name="row">This <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</param>
+            <param name="startIndex">The index at which to get the first value. The rest of the values are retrieved from subsequent indices.</param>
+            <returns>Potentially asynchronously returns a <see cref="T:System.ValueTuple`4"/> containing the retrieved value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">If any of the value indices is out of range for this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</exception>
+        </member>
+        <member name="M:E_UtilPack.TransformToTuple``5(UtilPack.TabularData.AsyncDataRow,System.Int32)">
+            <summary>
+            Asynchronously retrieves 5 subsequent values from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> and transforms them into a <see cref="T:System.ValueTuple`5"/>.
+            </summary>
+            <typeparam name="T1">The type of the first value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T2">The type of the second value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T3">The type of the third value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T4">The type of the fourth value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T5">The type of the fifth value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <param name="row">This <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</param>
+            <param name="startIndex">The index at which to get the first value. The rest of the values are retrieved from subsequent indices.</param>
+            <returns>Potentially asynchronously returns a <see cref="T:System.ValueTuple`5"/> containing the retrieved value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">If any of the value indices is out of range for this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</exception>
+        </member>
+        <member name="M:E_UtilPack.TransformToTuple``6(UtilPack.TabularData.AsyncDataRow,System.Int32)">
+            <summary>
+            Asynchronously retrieves 6 subsequent values from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> and transforms them into a <see cref="T:System.ValueTuple`6"/>.
+            </summary>
+            <typeparam name="T1">The type of the first value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T2">The type of the second value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T3">The type of the third value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T4">The type of the fourth value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T5">The type of the fifth value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T6">The type of the sixth value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <param name="row">This <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</param>
+            <param name="startIndex">The index at which to get the first value. The rest of the values are retrieved from subsequent indices.</param>
+            <returns>Potentially asynchronously returns a <see cref="T:System.ValueTuple`6"/> containing the retrieved value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">If any of the value indices is out of range for this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</exception>
+        </member>
+        <member name="M:E_UtilPack.TransformToTuple``7(UtilPack.TabularData.AsyncDataRow,System.Int32)">
+            <summary>
+            Asynchronously retrieves 7 subsequent values from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> and transforms them into a <see cref="T:System.ValueTuple`7"/>.
+            </summary>
+            <typeparam name="T1">The type of the first value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T2">The type of the second value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T3">The type of the third value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T4">The type of the fourth value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T5">The type of the fifth value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T6">The type of the sixth value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T7">The type of the seventh value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <param name="row">This <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</param>
+            <param name="startIndex">The index at which to get the first value. The rest of the values are retrieved from subsequent indices.</param>
+            <returns>Potentially asynchronously returns a <see cref="T:System.ValueTuple`7"/> containing the retrieved value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">If any of the value indices is out of range for this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</exception>
+        </member>
+        <member name="M:E_UtilPack.TransformToTuple``8(UtilPack.TabularData.AsyncDataRow,System.Int32)">
+            <summary>
+            Asynchronously retrieves 8 or more subsequent values from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> and transforms them into a <see cref="T:System.ValueTuple`8"/>.
+            </summary>
+            <typeparam name="T1">The type of the first value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T2">The type of the second value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T3">The type of the third value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T4">The type of the fourth value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T5">The type of the fifth value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T6">The type of the sixth value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="T7">The type of the seventh value to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <typeparam name="TRest">The type of the rest of the values to get from this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</typeparam>
+            <param name="row">This <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</param>
+            <param name="startIndex">The index at which to get the first value. The rest of the values are retrieved from subsequent indices.</param>
+            <returns>Potentially asynchronously returns a <see cref="T:System.ValueTuple`8"/> containing the retrieved value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.TabularData.AsyncDataRow"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">If any of the value indices is out of range for this <see cref="T:UtilPack.TabularData.AsyncDataRow"/>.</exception>
+        </member>
+        <member name="M:E_UtilPack.SkipBytesAsync(UtilPack.TabularData.AsyncDataColumn,System.Byte[])">
+            <summary>
+            Helper method to call <see cref="M:UtilPack.TabularData.AsyncDataColumn.TryGetValueAsync"/> if <paramref name="rawBytes"/> is <c>null</c>, or keep reading raw bytes into <paramref name="rawBytes"/>  using <see cref="M:UtilPack.TabularData.AsyncDataColumn.ReadBytesAsync(System.Byte[],System.Int32,System.Int32)"/> until all required bytes have been read.
+            </summary>
+            <param name="stream">This <see cref="T:UtilPack.TabularData.AsyncDataColumn"/>.</param>
+            <param name="rawBytes">The byte array to read to using <see cref="M:UtilPack.TabularData.AsyncDataColumn.ReadBytesAsync(System.Byte[],System.Int32,System.Int32)"/>, or <c>null</c> to use <see cref="M:UtilPack.TabularData.AsyncDataColumn.TryGetValueAsync"/> instead.</param>
+            <returns>A task which will always return <c>true</c> on completion.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,76 @@
+﻿@model IdeaSharingPlatform.WebApi.Models.LogInModel
+@{
+    ViewBag.Title = "LogInPageView";
+}
+
+<!DOCTYPE html>
+
+<html lang="tr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Giriş Yap</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-image: url(background.jpg);
+            background-size: 100%;
+            font-family: Didot, serif;
+        }
+
+        input[type=submit] {
+            background-color: #33524c;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+            input[type=submit]:hover {
+                opacity: 0.8;
+            }
+    </style>
+    <link rel="stylesheet" href="~/Scripts/Templates/StyleSheet1.css">
+
+</head>
+<body>
+    <h1 class="pagename" style="font-size: 60px;">Idealand</h1>
+
+    @using (Html.BeginForm("LogInPageView", "LogInAndSignUp", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken();
+
+        <div class="model-content animate">
+            <div class="container">
+                <label for="UserEmail"><b>Email</b></label>
+                @Html.EditorFor(model => model.UserEmail, new { htmlAttributes = new { @class = "container", @placeholder = "Emailinizi giriniz*", @id = "UserEmail" } })
+
+                <label for="UserPassword"><b>Şifre</b></label>
+                @Html.EditorFor(model => model.UserPassword, new { htmlAttributes = new { @class = "container", @placeholder = "Şifrenizi giriniz*", @type = "password", @id = "UserPassword" } })
+
+                <div class="animate__animated animate__fadeIn">
+                    <input type="submit" id="LogIn" name="LogInPage" value="Giriş Yap" />
+                    <div class="container" style="background-color:#fefefe">
+                        <p style="text-align:center; color: darkgray">veya</p>
+                        <input id="SignUpPageView" type="submit" name="LogInPage" value="Kaydol" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    }
+
+</body>
+</html>
+
+<!--
+     <input type="submit" id="LogIn" name="LogInPage" value="Giriş Yap" />
+            <div class="container" style="background-color: #fefefe">
+                <p style="text-align: center; color: darkgray">veya</p>
+                <input type="submit" id="SignUp" name="LogInPage" value="Kaydol" />
+            </div>
+
+-->

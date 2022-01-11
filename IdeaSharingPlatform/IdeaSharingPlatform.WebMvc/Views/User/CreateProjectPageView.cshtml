@@ -1,0 +1,56 @@
+﻿@model IdeaSharingPlatform.Models.Concretes.Projects
+@{
+    ViewBag.Title = "CreateProjectPageView";
+}
+
+<!DOCTYPE html>
+
+<html lang="tr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Proje Oluştur</title>
+    <link rel="stylesheet" href="~/Scripts/Templates/project.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        h3.indent {
+            padding-left: 32em
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <a href="#news">Bize Ulaşın</a>
+        <a href="#contact">Ayarlar</a>
+        <a href="#about">Arama</a>
+    </div>
+    <h1 class="pagename" style="font-size: 20px;">FıkırIdea</h1>
+    <h2 class="pagename" style="color:rgb(25, 31, 23);font-size: 40px;"></h2>
+      <h1>  Proje Oluştur</h1>
+
+        @using (Html.BeginForm("CreateProjectPageView", "User", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken();
+            <div class="modal-content animate" style="width:1000px;  margin: auto;">
+                <div class="container">
+
+                    <label for="projectname"><b>Proje Adı</b></label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ProjectName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Proje adını giriniz*", @required = "required" } })
+                        @Html.ValidationMessageFor(model => model.ProjectName, "", new { @class = "text-danger" })
+                    </div>
+
+                    <label for="projectblurb"><b>Proje özeti</b></label>
+                    @Html.EditorFor(model => model.ProjectBlurb, new { cols = 35, @rows = 3, htmlAttributes = new { @class = "form-control", @placeholder = "Proje özeti; proje vitrininde görünecek, projenizin konusunu kısaca açıkladığınız metindir. 1-2 cümleden oluşur*", @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.ProjectBlurb, "", new { @class = "text-danger" })
+
+                    <label for="projectdescription"><b>Proje Açıklaması</b></label>
+                    @Html.EditorFor(model => model.Description, new { cols = 60, @rows = 30, htmlAttributes = new { @class = "form-control", @placeholder = "Burada projenizi detaylıca açıklayabilirsiniz*", @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+
+                    <input type="submit" name="CreateProjectPageView" value="Proje Oluştur" />
+                </div>
+            </div>
+        }
+</body>
+</html>

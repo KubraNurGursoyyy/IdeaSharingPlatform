@@ -1,0 +1,3 @@
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\Idea Sharing Platform Web\obj\Debug\Idea Sharing Platform Web.csproj.AssemblyReference.cache
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\Idea Sharing Platform Web\obj\Debug\Idea Sharing Platform Web.csproj.SuggestedBindingRedirects.cache
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\Idea Sharing Platform Web\obj\Debug\Idea Sharing Platform Web.csproj.CoreCompileInputs.cache

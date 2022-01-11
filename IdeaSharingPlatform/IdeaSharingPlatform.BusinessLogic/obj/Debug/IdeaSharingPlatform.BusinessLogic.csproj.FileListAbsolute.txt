@@ -1,0 +1,94 @@
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.BusinessLogic.dll
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.BusinessLogic.pdb
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.Commons.dll
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.DataAccess.dll
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.Models.dll
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\Npgsql.dll
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Memory.dll
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Threading.Channels.dll
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Text.Json.dll
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\Microsoft.Bcl.HashCode.dll
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Buffers.dll
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Numerics.Vectors.dll
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Text.Encodings.Web.dll
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.ValueTuple.dll
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.Commons.pdb
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.Commons.dll.config
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.DataAccess.pdb
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.Models.pdb
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\Npgsql.xml
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Memory.xml
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Threading.Channels.xml
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Text.Json.xml
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\Microsoft.Bcl.HashCode.xml
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Buffers.xml
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Numerics.Vectors.xml
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Text.Encodings.Web.xml
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.ValueTuple.xml
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\obj\Debug\IdeaSharingPlatform.BusinessLogic.csprojAssemblyReference.cache
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\obj\Debug\IdeaSharingPlatform.BusinessLogic.csproj.CoreCompileInputs.cache
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\obj\Debug\IdeaSharingPlatform.BusinessLogic.csproj.CopyComplete
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\obj\Debug\IdeaSharingPlatform.BusinessLogic.dll
+D:\source\repos\IdeaSharingPlatform.BusinessLogic\obj\Debug\IdeaSharingPlatform.BusinessLogic.pdb
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.BusinessLogic.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.BusinessLogic.pdb
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.Commons.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.DataAccess.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.Models.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\Npgsql.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Memory.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Threading.Channels.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Text.Json.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Buffers.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.ValueTuple.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.Commons.pdb
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.Commons.dll.config
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.DataAccess.pdb
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.Models.pdb
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\Npgsql.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Memory.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Threading.Channels.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Text.Json.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Buffers.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\System.ValueTuple.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\obj\Debug\IdeaSharingPlatform.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\obj\Debug\IdeaSharingPlatform.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\obj\Debug\IdeaSharingPlatform.BusinessLogic.csproj.CopyComplete
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\obj\Debug\IdeaSharingPlatform.BusinessLogic.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\obj\Debug\IdeaSharingPlatform.BusinessLogic.pdb
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.BusinessLogic.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.BusinessLogic.pdb
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.Commons.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.DataAccess.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.Models.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.Commons.pdb
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.Commons.dll.config
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.DataAccess.pdb
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\bin\Debug\IdeaSharingPlatform.Models.pdb
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\obj\Debug\IdeaSharingPlatform.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\obj\Debug\IdeaSharingPlatform.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\obj\Debug\IdeaSharingPlatform.BusinessLogic.csproj.CopyComplete
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\obj\Debug\IdeaSharingPlatform.BusinessLogic.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.BusinessLogic\obj\Debug\IdeaSharingPlatform.BusinessLogic.pdb

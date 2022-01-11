@@ -1,0 +1,151 @@
+﻿@model IdeaSharingPlatform.Models.Concretes.Projects
+@{
+    ViewBag.Title = "SeeUsersProjectView";
+}
+
+
+<!DOCTYPE html>
+
+<html lang="tr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Anasayfa</title>
+    <link rel="stylesheet" href="~/Scripts/Templates/StyleSheet2.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        h3.indent {
+            padding-left: 25em;
+        }
+
+        .like {
+            width: 25px;
+            height: 25px;
+            margin: 5px;
+            border-color: black;
+            border-radius: 30px;
+            background-image: url(../../Scripts/Images/kalp.png);
+            background-size: cover;
+        }
+
+        .save {
+            width: 25px;
+            height: 25px;
+            margin: 5px;
+            border-color: black;
+            border-radius: 30px;
+            background-image: url(../../Scripts/Images/save.png);
+            background-size: cover;
+        }
+
+        /* Scrollbar styles */
+        ::-webkit-scrollbar {
+            width: 20px;
+            height: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            border: 1px solid;
+            border-color: #288f92;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #288f92;
+            border-radius: 10px;
+        }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: #88ba1c;
+            }
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <a href="#news">Bize Ulaşın</a>
+        <a href="#contact">Ayarlar</a>
+        <a href="#about">Arama</a>
+    </div>
+    <h1 class="pagename" style="font-size: 35px;">Idealand</h1>
+    <h2 class="pagename" style="color:rgb(25, 31, 23);font-size: 20px;">Hosgeldiniz</h2>
+    @using (Html.BeginForm("SeeUsersProjectView", "User", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken();
+        <div class="animate__animated animate__fadeIn" style="display: flex;">
+            <div class="container" style="width: 1200px; overflow: auto;">
+                <h1>Projeler</h1>
+
+                <div class="container">
+                    <div style="display: flex;">
+                        <h3>
+                            @Html.DisplayFor(modelItem => Model.ProjectName)
+                        </h3>
+                        <h5 style="color: rgb(90, 90, 90) ; padding-left:15px;">
+                            @Html.DisplayFor(modelItem => Model.ProjectCreationDate)
+                        </h5>
+                        <h3 class="indent">
+                            Yayınlayan
+                            @Html.DisplayFor(modelItem => Model.ProjectOwner.UserUsername)
+                        </h3>
+
+                    </div>
+                    <p>
+                        @Html.DisplayFor(modelItem => Model.ProjectBlurb)
+                        @Html.DisplayFor(modelItem => Model.Description)
+                        @Html.DisplayFor(modelItem => Model.ProjectsCategory)
+
+                    </p>
+                    <div class="container">
+
+                        <button type="submit" id="LikeProject" name="SeeUsersProjectView" value="SeeDetailsTheProject" style="color:rgb(11, 29, 28);font: size 35px;">@Html.ActionLink("Beğen", "LikeProject", new { currentprojectid = Model.ProjectID }, null)</button>
+
+
+                            @*@if (ViewData["Message"] != null)
+            {
+                <script type="text/javascript">
+
+                    window.onload = function () {
+                    alert(@ViewData["Message"]);
+                };
+                </script>
+            }*@
+                    </div>
+                    <div class="container">
+                        <button type="submit" id="EditProject" name="SeeUsersProjectView" value="SeeDetailsTheProject" style="color:rgb(11, 29, 28);font: size 35px;">@Html.ActionLink("Düzenle", "EditUsersProjectView", new { currentprojectid = Model.ProjectID })</button>
+
+                    </div>
+                    <!---
+                                        <button class="like">Html.Action("LikeProject", new { currentprojectid = Model.ProjectID })</button>
+
+                                                                Html.ActionLink("Beğen", "LikeProject", new { id = Model.ProjectID }, null)
+
+                                Html.Action("LikeProject")
+                                                                <button type="submit" class="like" id="LikeProject" name="SeeProjectView" value="LikeProject"></button>
+
+                    <div class="container">
+                        <button class="like" id="LikeProject" name="LikeProject" value="LikeProject"></button>
+                        <button class="save" id="SaveProject" name="SeeProjectView" value="LikeProject"></button>
+                    </div>
+                        -->
+
+                    <div class="container">
+                        Yorumlar
+                        @foreach (var comm in Model.ProjectsComments)
+                        {
+                            <h3 style="border:thin">
+                                @Html.DisplayFor(modelItem => comm.CommentedUser.UserUsername)
+                                @Html.DisplayFor(modelItem => comm.CommentedUser.UserEmail)
+                                @Html.DisplayFor(modelItem => comm.CommentDate)
+                                @Html.DisplayFor(modelItem => comm.CommentDescription)
+                            </h3>
+                        }
+
+                    </div>
+
+                    <br>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>

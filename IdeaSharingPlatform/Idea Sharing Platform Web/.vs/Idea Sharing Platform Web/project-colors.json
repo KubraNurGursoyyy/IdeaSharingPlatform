@@ -1,0 +1,51 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "681f6081-3417-44f8-ba40-a29f343fc8c1": {
+      "ProjectGuid": "681f6081-3417-44f8-ba40-a29f343fc8c1",
+      "DisplayName": "IdeaSharingPlatform.WebApi",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "55c4b0cb-806a-4ed1-9d75-9b42d313f2f6": {
+      "ProjectGuid": "55c4b0cb-806a-4ed1-9d75-9b42d313f2f6",
+      "DisplayName": "Idea Sharing Platform Web",
+      "ColorIndex": 1
+    },
+    "c057ffa0-53b3-4014-86de-2d94a1fcbeff": {
+      "ProjectGuid": "c057ffa0-53b3-4014-86de-2d94a1fcbeff",
+      "DisplayName": "IdeaSharingPlatform.Web",
+      "ColorIndex": 2
+    },
+    "3a5a3cc7-777c-4f4e-b665-f4ee3df7e822": {
+      "ProjectGuid": "3a5a3cc7-777c-4f4e-b665-f4ee3df7e822",
+      "DisplayName": "IdeaSharingPlatform.WebMVC",
+      "ColorIndex": 3
+    },
+    "209eb9e4-2b6a-4400-9040-e5034f19d890": {
+      "ProjectGuid": "209eb9e4-2b6a-4400-9040-e5034f19d890",
+      "DisplayName": "IdeaSharingPlatform.WebMvc",
+      "ColorIndex": 4
+    },
+    "727d4873-e5ea-457d-bad9-5624ac32d8a6": {
+      "ProjectGuid": "727d4873-e5ea-457d-bad9-5624ac32d8a6",
+      "DisplayName": "DeepLearningService",
+      "ColorIndex": 5
+    },
+    "062c28d6-db07-4b52-b34c-e3552015cfb8": {
+      "ProjectGuid": "062c28d6-db07-4b52-b34c-e3552015cfb8",
+      "DisplayName": "WcfService1",
+      "ColorIndex": 6
+    },
+    "1121e918-0893-41c4-b97e-69f7c709f84d": {
+      "ProjectGuid": "1121e918-0893-41c4-b97e-69f7c709f84d",
+      "DisplayName": "IdeaClassificationService",
+      "ColorIndex": 7
+    }
+  },
+  "NextColorIndex": 8
+}

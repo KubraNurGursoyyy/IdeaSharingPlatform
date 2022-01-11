@@ -1,0 +1,137 @@
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\IdeaSharingPlatform.Commons.dll.config
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\IdeaSharingPlatform.Commons.dll
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\IdeaSharingPlatform.Commons.pdb
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\CBAM.Abstractions.dll
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\CBAM.SQL.dll
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\Microsoft.Bcl.HashCode.dll
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\Npgsql.dll
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.Buffers.dll
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.Collections.Immutable.dll
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.Memory.dll
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.Numerics.Vectors.dll
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.Text.Encodings.Web.dll
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.Text.Json.dll
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.Threading.Channels.dll
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.ValueTuple.dll
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\UtilPack.AsyncEnumeration.dll
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\UtilPack.dll
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\UtilPack.TabularData.dll
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\CBAM.Abstractions.xml
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\CBAM.SQL.xml
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\Microsoft.Bcl.HashCode.xml
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\Npgsql.xml
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.Buffers.xml
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.Collections.Immutable.xml
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.Memory.xml
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.Numerics.Vectors.xml
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.Text.Encodings.Web.xml
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.Text.Json.xml
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.Threading.Channels.xml
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\System.ValueTuple.xml
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\UtilPack.xml
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\UtilPack.AsyncEnumeration.xml
+D:\source\repos\IdeaSharingPlatform.Commons\bin\Debug\UtilPack.TabularData.xml
+D:\source\repos\IdeaSharingPlatform.Commons\obj\Debug\IdeaSharingPlatform.Commons.csprojAssemblyReference.cache
+D:\source\repos\IdeaSharingPlatform.Commons\obj\Debug\IdeaSharingPlatform.Commons.csproj.CoreCompileInputs.cache
+D:\source\repos\IdeaSharingPlatform.Commons\obj\Debug\IdeaSharingPlatform.Commons.csproj.CopyComplete
+D:\source\repos\IdeaSharingPlatform.Commons\obj\Debug\IdeaSharingPlatform.Commons.dll
+D:\source\repos\IdeaSharingPlatform.Commons\obj\Debug\IdeaSharingPlatform.Commons.pdb
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\IdeaSharingPlatform.Commons.dll.config
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\IdeaSharingPlatform.Commons.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\IdeaSharingPlatform.Commons.pdb
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\CBAM.Abstractions.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\CBAM.SQL.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\Npgsql.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Buffers.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Collections.Immutable.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Memory.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Text.Json.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Threading.Channels.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.ValueTuple.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\UtilPack.AsyncEnumeration.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\UtilPack.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\UtilPack.TabularData.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\CBAM.Abstractions.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\CBAM.SQL.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\Npgsql.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Buffers.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Collections.Immutable.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Memory.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Text.Json.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Threading.Channels.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.ValueTuple.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\UtilPack.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\UtilPack.AsyncEnumeration.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\UtilPack.TabularData.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\obj\Debug\IdeaSharingPlatform.Commons.csproj.CoreCompileInputs.cache
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\obj\Debug\IdeaSharingPlatform.Commons.csproj.CopyComplete
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\obj\Debug\IdeaSharingPlatform.Commons.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaSharingPlatform\IdeaSharingPlatform.Commons\obj\Debug\IdeaSharingPlatform.Commons.pdb
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\IdeaSharingPlatform.Commons.dll.config
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\IdeaSharingPlatform.Commons.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\IdeaSharingPlatform.Commons.pdb
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\CBAM.Abstractions.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\CBAM.SQL.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\Npgsql.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Buffers.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Collections.Immutable.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Memory.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Text.Json.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Threading.Channels.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.ValueTuple.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\UtilPack.AsyncEnumeration.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\UtilPack.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\UtilPack.TabularData.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\CBAM.Abstractions.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\CBAM.SQL.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\Npgsql.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Buffers.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Collections.Immutable.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Memory.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Text.Json.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Threading.Channels.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\System.ValueTuple.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\UtilPack.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\UtilPack.AsyncEnumeration.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\bin\Debug\UtilPack.TabularData.xml
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\obj\Debug\IdeaSharingPlatform.Commons.csproj.CoreCompileInputs.cache
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\obj\Debug\IdeaSharingPlatform.Commons.csproj.CopyComplete
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\obj\Debug\IdeaSharingPlatform.Commons.dll
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\obj\Debug\IdeaSharingPlatform.Commons.pdb
+C:\Users\bayra\OneDrive - BAKIRÇAY ÜNİVERSİTESİ\IdeaLand\IdeaSharingPlatform\IdeaSharingPlatform.Commons\obj\Debug\IdeaSharingPlatform.Commons.csproj.AssemblyReference.cache

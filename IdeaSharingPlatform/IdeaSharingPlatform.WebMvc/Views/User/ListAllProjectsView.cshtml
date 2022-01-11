@@ -1,0 +1,75 @@
+﻿@model IEnumerable<IdeaSharingPlatform.Models.Concretes.Projects>
+@{
+    ViewBag.Title = "ListAllProjectsView";
+}
+
+<center>
+    <h2>ListAllProjectsView</h2>
+
+       <hr />
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectOwner)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectsCategory)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectsComments.Count)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectsLikedUsers.Count)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectBlurb)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectCreationDate)
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectOwner)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectsCategory)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectsComments.Count)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectsLikedUsers.Count)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectBlurb)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectCreationDate)
+                </td>
+           
+            </tr>
+            }
+        </table>
+</center>
+

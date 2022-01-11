@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "9d337194-917c-4c92-beb8-d50a2f461f16": {
+      "ProjectGuid": "9d337194-917c-4c92-beb8-d50a2f461f16",
+      "DisplayName": "IdeaSharingPlatform.DataAccess",
+      "ColorIndex": 0
+    },
+    "235bfadf-cf43-427a-8a0d-2e2dc6f056f0": {
+      "ProjectGuid": "235bfadf-cf43-427a-8a0d-2e2dc6f056f0",
+      "DisplayName": "IdeaSharingPlatform.Commons",
+      "ColorIndex": 1
+    },
+    "bc657859-6085-45ed-ad7b-a668a87be24a": {
+      "ProjectGuid": "bc657859-6085-45ed-ad7b-a668a87be24a",
+      "DisplayName": "IdeaSharingPlatform.BusinessLogic",
+      "ColorIndex": 2
+    },
+    "daf692b5-f8ad-41ee-8c0a-b477b05d1d61": {
+      "ProjectGuid": "daf692b5-f8ad-41ee-8c0a-b477b05d1d61",
+      "DisplayName": "IdeaSharingPlatform.Models",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

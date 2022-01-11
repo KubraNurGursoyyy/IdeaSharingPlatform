@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CBAM.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:CBAM.Abstractions.Connection`6">
+            <summary>
+            This is common interface for any kind of connection to the potentially remote resource (e.g. SQL or HTTP or LDAP server).
+            </summary>
+            <typeparam name="TStatement">The type of objects used to manipulate or query remote resource.</typeparam>
+            <typeparam name="TStatementInformation">The type of objects describing <typeparamref name="TStatement"/>s.</typeparam>
+            <typeparam name="TStatementCreationArgs">The type of object used to create an instance of <typeparamref name="TStatement"/>.</typeparam>
+            <typeparam name="TEnumerableItem">The type of object representing the response of manipulation or querying remote resource.</typeparam>
+            <typeparam name="TEnumerable">The actual type of <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> returned by <see cref="M:CBAM.Abstractions.Connection`6.PrepareStatementForExecution(`1)"/> (can be e.g. <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/>).</typeparam>
+            <typeparam name="TVendorFunctionality">The type of object describing vendor-specific information.</typeparam>
+        </member>
+        <member name="M:CBAM.Abstractions.Connection`6.PrepareStatementForExecution(`1)">
+            <summary>
+            Prepares object that will manipulate or query remote resource to be ready for execution.
+            </summary>
+            <param name="statement">The statement, which describes querying or manipulating the remote resource.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> to be used to execute the statement.</returns>
+            <remarks>This method does not execute the <paramref name="statement"/>. The first call to <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/> will do that.</remarks>
+        </member>
+        <member name="P:CBAM.Abstractions.Connection`6.VendorFunctionality">
+            <summary>
+            Gets the <see cref="T:CBAM.Abstractions.ConnectionVendorFunctionality`2"/> of this connection.
+            </summary>
+            <value>The <see cref="T:CBAM.Abstractions.ConnectionVendorFunctionality`2"/> of this connection.</value>
+        </member>
+        <member name="P:CBAM.Abstractions.Connection`6.DisableEnumerableObservability">
+            <summary>
+            This property controls whether the enumerables returned by <see cref="M:CBAM.Abstractions.Connection`6.PrepareStatementForExecution(`1)"/> method is observable, that is, implements <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumerableObservable`2"/> and triggers the events of this <see cref="T:CBAM.Abstractions.Connection`6"/> when enumerated.
+            </summary>
+            <value>Whether the enumerables returned by <see cref="M:CBAM.Abstractions.Connection`6.PrepareStatementForExecution(`1)"/> method implement <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumerableObservable`2"/> and trigger the observability events of this <see cref="T:CBAM.Abstractions.Connection`6"/>.</value>
+        </member>
+        <member name="T:CBAM.Abstractions.ConnectionVendorFunctionality`2">
+            <summary>
+            This interface represents vendor-specific functionality that is required by <see cref="T:CBAM.Abstractions.Connection`6"/>.
+            </summary>
+            <typeparam name="TStatement">The type of statement object used to manipulate or query the remote resource.</typeparam>
+            <typeparam name="TStatementCreationArgs">The type of parameters used to create statement object.</typeparam>
+        </member>
+        <member name="M:CBAM.Abstractions.ConnectionVendorFunctionality`2.CreateStatementBuilder(`1)">
+            <summary>
+            Creates a modifiable statement object, which can be customized and parametrized as needed in order to manipulate or query remote resource.
+            </summary>
+            <param name="creationArgs">The object that contains information that will not be customizable in resulting statement builder.</param>
+            <returns>Customizable statement object.</returns>
+        </member>
+        <member name="T:E_CBAM">
+            <summary>
+            This class contains extension methods for types defined in this assembly.
+            </summary>
+        </member>
+        <member name="M:E_CBAM.CreateStatementBuilder``6(CBAM.Abstractions.Connection{``0,``1,``2,``3,``4,``5},``2)">
+            <summary>
+            This is shortcut method to create a new statement from the <see cref="P:CBAM.Abstractions.Connection`6.VendorFunctionality"/> of this <see cref="T:CBAM.Abstractions.Connection`6"/>.
+            </summary>
+            <typeparam name="TStatement">The type of objects used to manipulate or query remote resource.</typeparam>
+            <typeparam name="TStatementInformation">The type of objects describing <typeparamref name="TStatement"/>s.</typeparam>
+            <typeparam name="TStatementCreationArgs">The type of object used to create an instance of <typeparamref name="TStatement"/>.</typeparam>
+            <typeparam name="TEnumerableItem">The type of object representing the response of manipulation or querying remote resource.</typeparam>
+            <typeparam name="TVendorFunctionality">The type of object describing vendor-specific information.</typeparam>
+            <typeparam name="TEnumerable">The actual type of <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> returned by <see cref="M:CBAM.Abstractions.Connection`6.PrepareStatementForExecution(`1)"/>.</typeparam>
+            <param name="connection">This <see cref="T:CBAM.Abstractions.Connection`6"/>.</param>
+            <param name="creationArgs">The statement builder creation parameters.</param>
+            <returns>A new instance of statement builder with given <paramref name="creationArgs"/>.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:CBAM.Abstractions.Connection`6"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_CBAM.PrepareStatementForExecution``6(CBAM.Abstractions.Connection{``0,``1,``2,``3,``4,``5},``2)">
+            <summary>
+            This is shortcut method to directly prepare statement from its starting parameters without using builder.
+            </summary>
+            <typeparam name="TStatement">The type of objects used to manipulate or query remote resource.</typeparam>
+            <typeparam name="TStatementInformation">The type of objects describing <typeparamref name="TStatement"/>s.</typeparam>
+            <typeparam name="TStatementCreationArgs">The type of object used to create an instance of <typeparamref name="TStatement"/>.</typeparam>
+            <typeparam name="TEnumerableItem">The type of object representing the response of manipulation or querying remote resource.</typeparam>
+            <typeparam name="TVendorFunctionality">The type of object describing vendor-specific information.</typeparam>
+            <typeparam name="TEnumerable">The actual type of <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> returned by <see cref="M:CBAM.Abstractions.Connection`6.PrepareStatementForExecution(`1)"/>.</typeparam>
+            <param name="connection">This <see cref="T:CBAM.Abstractions.Connection`6"/>.</param>
+            <param name="creationArgs">The statement builder creation parameters.</param>
+            <returns>A new instance of <see cref="T:UtilPack.AsyncEnumeration.AsyncEnumerator`1"/>, ready to be executed.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:CBAM.Abstractions.Connection`6"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_CBAM.ExecuteAndIgnoreResults``6(CBAM.Abstractions.Connection{``0,``1,``2,``3,``4,``5},``0,System.Action)">
+            <summary>
+            This is shortcut method to prepare statement and execute it while ignoring any possibly returned results when encountered during <see cref="M:E_UtilPack.EnumerateConcurrentlyIfPossible{T}(UtilPack.AsyncEnumeration.IAsyncEnumerable{T},System.Func{T, System.Threading.Tasks.Task})"/> method.
+            </summary>
+            <typeparam name="TStatement">The type of objects used to manipulate or query remote resource.</typeparam>
+            <typeparam name="TStatementInformation">The type of objects describing <typeparamref name="TStatement"/>s.</typeparam>
+            <typeparam name="TStatementCreationArgs">The type of object used to create an instance of <typeparamref name="TStatement"/>.</typeparam>
+            <typeparam name="TEnumerableItem">The type of object representing the response of manipulation or querying remote resource.</typeparam>
+            <typeparam name="TVendorFunctionality">The type of object describing vendor-specific information.</typeparam>
+            <typeparam name="TEnumerable">The actual type of <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> returned by <see cref="M:CBAM.Abstractions.Connection`6.PrepareStatementForExecution(`1)"/>.</typeparam>
+            <param name="connection">This <see cref="T:CBAM.Abstractions.Connection`6"/>.</param>
+            <param name="statement">The statement builder.</param>
+            <param name="action">Optional synchronous callback to execute after execution has started, and before it is ended.</param>
+            <returns>A task which will have enumerated the <see cref="T:UtilPack.AsyncEnumeration.AsyncEnumerator`1"/> returned by <see cref="M:CBAM.Abstractions.Connection`6.PrepareStatementForExecution(`1)"/>.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:CBAM.Abstractions.Connection`6"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_CBAM.ExecuteAndIgnoreResults``6(CBAM.Abstractions.Connection{``0,``1,``2,``3,``4,``5},``2,System.Action)">
+            <summary>
+            This is shortcut method to create statement builder from creation parameters, prepare statement builder for execution, and execute it while ignoring any possibly returned results when encountered during <see cref="M:E_UtilPack.EnumerateConcurrentlyIfPossible{T}(UtilPack.AsyncEnumeration.IAsyncEnumerable{T},System.Func{T, System.Threading.Tasks.Task})"/> method.
+            </summary>
+            <typeparam name="TStatement">The type of objects used to manipulate or query remote resource.</typeparam>
+            <typeparam name="TStatementInformation">The type of objects describing <typeparamref name="TStatement"/>s.</typeparam>
+            <typeparam name="TStatementCreationArgs">The type of object used to create an instance of <typeparamref name="TStatement"/>.</typeparam>
+            <typeparam name="TEnumerableItem">The type of object representing the response of manipulation or querying remote resource.</typeparam>
+            <typeparam name="TVendorFunctionality">The type of object describing vendor-specific information.</typeparam>
+            <typeparam name="TEnumerable">The actual type of <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> returned by <see cref="M:CBAM.Abstractions.Connection`6.PrepareStatementForExecution(`1)"/>.</typeparam>
+            <param name="connection">This <see cref="T:CBAM.Abstractions.Connection`6"/>.</param>
+            <param name="creationArgs">The creation parameters for statement builder.</param>
+            <param name="action">Optional synchronous callback to execute after execution has started, and before it is ended.</param>
+            <returns>A task which will have enumerated the <see cref="T:UtilPack.AsyncEnumeration.AsyncEnumerator`1"/> returned by <see cref="M:CBAM.Abstractions.Connection`6.PrepareStatementForExecution(`1)"/>.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:CBAM.Abstractions.Connection`6"/> is <c>null</c>.</exception>
+        </member>
+    </members>
+</doc>

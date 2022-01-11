@@ -1,0 +1,1875 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UtilPack.AsyncEnumeration</name>
+    </assembly>
+    <members>
+        <member name="T:E_UtilPack">
+            <summary>
+            This class contains extension methods for UtilPack types.
+            </summary>
+        </member>
+        <member name="M:E_UtilPack.AggregateAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,``0,``0})">
+            <summary>
+            Similarly to <see cref="M:System.Linq.Enumerable.Aggregate``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0,``0})"/> method, this method potentially asynchronously enumerates this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> and aggregates a single value using the given <paramref name="func"/> synchronous callback.
+            </summary>
+            <typeparam name="T">The type of elements being enumerated.</typeparam>
+            <param name="source">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="func">The synchronous callback function to perform aggregation. First argument is previous element, second argument is current element, and return value is the new aggregated value.</param>
+            <returns>An aggregated value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="func"/> is <c>null</c>.</exception>
+            <exception cref="T:System.InvalidOperationException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> does not contain at least one element.</exception>
+        </member>
+        <member name="M:E_UtilPack.AggregateAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,``0,System.Threading.Tasks.ValueTask{``0}})">
+            <summary>
+            Similarly to <see cref="M:System.Linq.Enumerable.Aggregate``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0,``0})"/> method, this method potentially asynchronously enumerates this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> and aggregates a single value using the given <paramref name="asyncFunc"/> potentially asynchronous callback.
+            </summary>
+            <typeparam name="T">The type of elements being enumerated.</typeparam>
+            <param name="source">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="asyncFunc">The potentially asynchronous callback function to perform aggregation. First argument is previous element, second argument is current element, and return value is the new aggregated value.</param>
+            <returns>An aggregated value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="asyncFunc"/> is <c>null</c>.</exception>
+            <exception cref="T:System.InvalidOperationException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> does not contain at least one element.</exception>
+        </member>
+        <member name="M:E_UtilPack.AggregateAsync``2(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``1,``0,``1},``1)">
+            <summary>
+            Similarly to <see cref="M:System.Linq.Enumerable.Aggregate``2(System.Collections.Generic.IEnumerable{``0},``1,System.Func{``1,``0,``1})"/> method, this method potentially asynchronously enumerates this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> and aggregates a single value using the given <paramref name="func"/> synchronous callback.
+            The type of the intermediate and return value is different than the type of elements in this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.
+            </summary>
+            <typeparam name="T">The type of elements being enumerated.</typeparam>
+            <typeparam name="TResult">The type of intermediate and result values.</typeparam>
+            <param name="source">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="func">The synchronous calllback function to perform aggregation. First argument is intermediate value, second argument is current element, and return value is the new intermediate value, or return value if current element is last element.</param>
+            <param name="seed">The optional initial value for first argument of <paramref name="func"/> callback.</param>
+            <returns>An aggregated value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="func"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.AggregateAsync``2(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``1,``0,System.Threading.Tasks.ValueTask{``1}},``1)">
+            <summary>
+            Similarly to <see cref="M:System.Linq.Enumerable.Aggregate``2(System.Collections.Generic.IEnumerable{``0},``1,System.Func{``1,``0,``1})"/> method, this method potentially asynchronously enumerates this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> and aggregates a single value using the given <paramref name="asyncFunc"/> potentially asynchronous callback.
+            The type of the intermediate and return value is different than the type of elements in this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.
+            </summary>
+            <typeparam name="T">The type of elements being enumerated.</typeparam>
+            <typeparam name="TResult">The type of intermediate and result values.</typeparam>
+            <param name="source">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="asyncFunc">The potentially asynchronous calllback function to perform aggregation. First argument is intermediate value, second argument is current element, and return value is the new intermediate value, or return value if current element is last element.</param>
+            <param name="seed">The optional initial value for first argument of <paramref name="asyncFunc"/> callback.</param>
+            <returns>An aggregated value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="asyncFunc"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.AnyAsync``1(System.Collections.Generic.IAsyncEnumerable{``0})">
+            <summary>
+            Similarly to <see cref="M:System.Linq.Enumerable.Any``1(System.Collections.Generic.IEnumerable{``0})"/>, this method checks whether this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> contains at least one element.
+            </summary>
+            <typeparam name="T">The type of elements being enumerated.</typeparam>
+            <param name="source">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <returns>Potentially asynchronously returns <c>true</c> if this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> has at least one element; <c>false</c> otherwise.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.Any``1(System.Collections.Generic.IEnumerable{``0})"/>
+        </member>
+        <member name="M:E_UtilPack.AnyAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            Similarly to <see cref="M:System.Linq.Enumerable.Any``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})"/>, this method checks whether this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> contains at least one element, that satisfies condition checked by given <paramref name="predicate"/> synchronous callback.
+            </summary>
+            <typeparam name="T">The type of elements being enumerated.</typeparam>
+            <param name="source">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="predicate">The synchronous callback to check whether an element satifies some condition. If <c>null</c>, then the first item will always satisfy the condition.</param>
+            <returns>Potentially asynchronously returns <c>true</c> if this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> has at least one element that satifies condition checked by <paramref name="predicate"/>; <c>false</c> otherwise.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.Any``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})"/>
+        </member>
+        <member name="M:E_UtilPack.AnyAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.ValueTask{System.Boolean}})">
+            <summary>
+            Similarly to <see cref="M:System.Linq.Enumerable.Any``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})"/>, this method checks whether this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> contains at least one element, that satisfies condition checked by given <paramref name="asyncPredicate"/> potentially asynchronous callback.
+            </summary>
+            <typeparam name="T">The type of elements being enumerated.</typeparam>
+            <param name="source">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="asyncPredicate">The potentially asynchronous callback to check whether an element satifies some condition. If <c>null</c>, then the first item will always satisfy the condition.</param>
+            <returns>Potentially asynchronously returns <c>true</c> if this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> has at least one element that satifies condition checked by <paramref name="asyncPredicate"/>; <c>false</c> otherwise.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.Any``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})"/>
+        </member>
+        <member name="M:E_UtilPack.AllAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            Checks that all items in this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> adher to condition checked by given synchronous <paramref name="predicate"/>.
+            </summary>
+            <typeparam name="T">The type of elements being enumerated.</typeparam>
+            <param name="source">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="predicate">The synchronous callback to check whether an element satifies some condition.</param>
+            <returns>Potentially asynchronously returns <c>true</c> if this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is empty, or if all elements of the enumerable satisfy condition checked by <paramref name="predicate"/>; <c>false</c> otherwise.</returns>
+            <seealso cref="M:System.Linq.Enumerable.All``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})"/>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="predicate"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.AllAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.ValueTask{System.Boolean}})">
+            <summary>
+            Checks that all items in this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> adher to condition checked by given potentially asynchronous <paramref name="asyncPredicate"/>.
+            </summary>
+            <typeparam name="T">The type of elements being enumerated.</typeparam>
+            <param name="source">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="asyncPredicate">The potentially asynchronous callback to check whether an element satifies some condition.</param>
+            <returns>Potentially asynchronously returns <c>true</c> if this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is empty, or if all elements of the enumerable satisfy condition checked by <paramref name="asyncPredicate"/>; <c>false</c> otherwise.</returns>
+            <seealso cref="M:System.Linq.Enumerable.All``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})"/>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="asyncPredicate"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.FirstAsync``1(System.Collections.Generic.IAsyncEnumerable{``0})">
+            <summary>
+            Asynchronously fetches the first item in this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> and discards any other items.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <returns>The first item returned by <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> of this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.InvalidOperationException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> has no elements.</exception>
+            <seealso cref="M:System.Linq.Enumerable.First``1(System.Collections.Generic.IEnumerable{``0})"/>
+        </member>
+        <member name="M:E_UtilPack.FirstAsync``1(System.Collections.Generic.IAsyncEnumerator{``0})">
+            <summary>
+            Asynchronously fetches the first item in this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> and discards any other items.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <param name="enumerator">This <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.</param>
+            <returns>The first item returned by this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.InvalidOperationException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> has no elements.</exception>
+            <seealso cref="M:System.Linq.Enumerable.First``1(System.Collections.Generic.IEnumerable{``0})"/>
+        </member>
+        <member name="M:E_UtilPack.FirstOrDefaultAsync``1(System.Collections.Generic.IAsyncEnumerable{``0})">
+            <summary>
+            Asynchronously fetches the first item in this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> and discards any other items.
+            If there are no items, the the default is returned for type <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <returns>The first item returned by <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> of this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>, or default for type <typeparamref name="T"/>.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.FirstOrDefault``1(System.Collections.Generic.IEnumerable{``0})"/>
+        </member>
+        <member name="M:E_UtilPack.FirstOrDefaultAsync``1(System.Collections.Generic.IAsyncEnumerator{``0})">
+            <summary>
+            Asynchronously fetches the first item in this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> and discards any other items.
+            If there are no items, the the default is returned for type <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <param name="enumerator">This <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.</param>
+            <returns>The first item returned by this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>, or default for type <typeparamref name="T"/>.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.FirstOrDefault``1(System.Collections.Generic.IEnumerable{``0})"/>
+        </member>
+        <member name="M:E_UtilPack.OfType``2(System.Collections.Generic.IAsyncEnumerable{``0})">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will return only those items which are of given type.
+            </summary>
+            <typeparam name="T">The type of source enumerable items.</typeparam>
+            <typeparam name="U">The type of target items.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will return only those items which are of given type.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.OfType``1(System.Collections.IEnumerable)"/>
+        </member>
+        <member name="M:E_UtilPack.OfType``2(System.Collections.Generic.IAsyncEnumerable{``0},UtilPack.AsyncEnumeration.LINQ.OfTypeInfo{``1})">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will return only those items which are of given <see cref="T:UtilPack.AsyncEnumeration.LINQ.OfTypeInfo`1"/>.
+            This method exists because default interface methods are not yet implemented.
+            </summary>
+            <typeparam name="T">The type of source enumerable items.</typeparam>
+            <typeparam name="U">The type of target items.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="type">The <see cref="T:UtilPack.AsyncEnumeration.LINQ.OfTypeInfo`1"/> containing target type information, so that this method could be invoked without using two generic type parameters. This parameter is present only to make this method easy to use, it is not used by the body of this method.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will return only those items which are of given type.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.OfType``1(System.Collections.IEnumerable)"/>
+        </member>
+        <member name="M:E_UtilPack.OfType``2(System.Collections.Generic.IAsyncEnumerator{``0})">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will return only those items which are of given type.
+            </summary>
+            <typeparam name="T">The type of source enumerable items.</typeparam>
+            <typeparam name="U">The type of target items.</typeparam>
+            <param name="enumerator">This <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will return only those items which are of given type.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.OfType``1(System.Collections.IEnumerable)"/>
+        </member>
+        <member name="M:E_UtilPack.OfType``2(System.Collections.Generic.IAsyncEnumerator{``0},UtilPack.AsyncEnumeration.LINQ.OfTypeInfo{``1})">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will return only those items which are of given <see cref="T:UtilPack.AsyncEnumeration.LINQ.OfTypeInfo`1"/>.
+            This method exists because default interface methods are not yet implemented.
+            </summary>
+            <typeparam name="T">The type of source enumerable items.</typeparam>
+            <typeparam name="U">The type of target items.</typeparam>
+            <param name="enumerator">This <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.</param>
+            <param name="type">The <see cref="T:UtilPack.AsyncEnumeration.LINQ.OfTypeInfo`1"/> containing target type information, so that this method could be invoked without using two generic type parameters. This parameter is present only to make this method easy to use, it is not used by the body of this method.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will return only those items which are of given type.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.OfType``1(System.Collections.IEnumerable)"/>
+        </member>
+        <member name="M:E_UtilPack.Select``2(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will return items as transformed by given selector callback.
+            </summary>
+            <typeparam name="T">The type of source items.</typeparam>
+            <typeparam name="U">The type of target items.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="selector">The callback to transform a single item into <typeparamref name="U"/>.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will return items as transformed by given selector callback.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="selector"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.Select``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})"/>
+        </member>
+        <member name="M:E_UtilPack.Select``2(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.ValueTask{``1}})">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will return items as transformed by given asynchronous selector callback.
+            </summary>
+            <typeparam name="T">The type of source items.</typeparam>
+            <typeparam name="U">The type of target items.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="asyncSelector">The callback to asynchronously transform a single item into <typeparamref name="U"/>.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will return items as transformed by given selector callback.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="asyncSelector"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.Select``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})"/>
+        </member>
+        <member name="M:E_UtilPack.Select``2(System.Collections.Generic.IAsyncEnumerator{``0},System.Func{``0,``1})">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will return items as transformed by given selector callback.
+            </summary>
+            <typeparam name="T">The type of source items.</typeparam>
+            <typeparam name="U">The type of target items.</typeparam>
+            <param name="enumerator">This <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.</param>
+            <param name="selector">The callback to transform a single item into <typeparamref name="U"/>.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will return items as transformed by given selector callback.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="selector"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.Select``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})"/>
+        </member>
+        <member name="M:E_UtilPack.Select``2(System.Collections.Generic.IAsyncEnumerator{``0},System.Func{``0,System.Threading.Tasks.ValueTask{``1}})">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will return items as transformed by given asynchronous selector callback.
+            </summary>
+            <typeparam name="T">The type of source items.</typeparam>
+            <typeparam name="U">The type of target items.</typeparam>
+            <param name="enumerator">This <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.</param>
+            <param name="asyncSelector">The callback to asynchronously transform a single item into <typeparamref name="U"/>.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will return items as transformed by given selector callback.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="asyncSelector"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.Select``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})"/>
+        </member>
+        <member name="M:E_UtilPack.SelectMany``2(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Collections.Generic.IEnumerable{``1}})">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will flatten the items returned by given selector callback.
+            </summary>
+            <typeparam name="T">The type of source items.</typeparam>
+            <typeparam name="U">The type of target items.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="selector">The callback to transform a single item into enumerable of items of type <typeparamref name="U"/>.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will return items as flattened asynchronous enumerable.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="selector"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.SelectMany``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Collections.Generic.IEnumerable{``1}})"/>
+        </member>
+        <member name="M:E_UtilPack.SelectMany``2(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Collections.Generic.IAsyncEnumerable{``1}})">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will asynchronously flatten the items returned by given selector callback.
+            </summary>
+            <typeparam name="T">The type of source items.</typeparam>
+            <typeparam name="U">The type of target items.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="asyncSelector">The callback to transform a single item into asynchronous enumerable of items of type <typeparamref name="U"/>.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will return items as flattened asynchronous enumerable.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="asyncSelector"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.SelectMany``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Collections.Generic.IEnumerable{``1}})"/>
+        </member>
+        <member name="M:E_UtilPack.SelectMany``2(System.Collections.Generic.IAsyncEnumerator{``0},System.Func{``0,System.Collections.Generic.IEnumerable{``1}})">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will flatten the items returned by given selector callback.
+            </summary>
+            <typeparam name="T">The type of source items.</typeparam>
+            <typeparam name="U">The type of target items.</typeparam>
+            <param name="enumerator">This <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.</param>
+            <param name="selector">The callback to transform a single item into enumerable of items of type <typeparamref name="U"/>.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will return items as flattened asynchronous enumerator.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="selector"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.SelectMany``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Collections.Generic.IEnumerable{``1}})"/>
+        </member>
+        <member name="M:E_UtilPack.SelectMany``2(System.Collections.Generic.IAsyncEnumerator{``0},System.Func{``0,System.Collections.Generic.IAsyncEnumerable{``1}})">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will asynchronously flatten the items returned by given selector callback.
+            </summary>
+            <typeparam name="T">The type of source items.</typeparam>
+            <typeparam name="U">The type of target items.</typeparam>
+            <param name="enumerator">This <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.</param>
+            <param name="asyncSelector">The callback to transform a single item into asynchronous enumerable of items of type <typeparamref name="U"/>.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will return items as flattened asynchronous enumerator.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="asyncSelector"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.SelectMany``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Collections.Generic.IEnumerable{``1}})"/>
+        </member>
+        <member name="M:E_UtilPack.Skip``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Int32)">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will return at most given amount of items.
+            </summary>
+            <typeparam name="T">The type of items.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="amount">The maximum amount of items to return. If zero or less, will return empty enumerable.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will return at most given amount of items.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.Skip``1(System.Collections.Generic.IEnumerable{``0},System.Int32)"/>
+        </member>
+        <member name="M:E_UtilPack.Skip``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Int64)">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will return at most given amount of items.
+            </summary>
+            <typeparam name="T">The type of items.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="amount">The maximum amount of items to return. If zero or less, will return empty enumerable.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will return at most given amount of items.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.Skip``1(System.Collections.Generic.IEnumerable{``0},System.Int32)"/>
+        </member>
+        <member name="M:E_UtilPack.Skip``1(System.Collections.Generic.IAsyncEnumerator{``0},System.Int32)">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will return at most given amount of items.
+            </summary>
+            <typeparam name="T">The type of items.</typeparam>
+            <param name="enumerator">This <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.</param>
+            <param name="amount">The maximum amount of items to return. If zero or less, will return empty enumerable.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will return at most given amount of items.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.Skip``1(System.Collections.Generic.IEnumerable{``0},System.Int32)"/>
+        </member>
+        <member name="M:E_UtilPack.Skip``1(System.Collections.Generic.IAsyncEnumerator{``0},System.Int64)">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will return at most given amount of items.
+            </summary>
+            <typeparam name="T">The type of items.</typeparam>
+            <param name="enumerator">This <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.</param>
+            <param name="amount">The maximum amount of items to return. If zero or less, will return empty enumerable.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will return at most given amount of items.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.Skip``1(System.Collections.Generic.IEnumerable{``0},System.Int32)"/>
+        </member>
+        <member name="M:E_UtilPack.SkipWhile``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            This extension 
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="enumerable"></param>
+            <param name="predicate"></param>
+            <returns></returns>
+            <seealso cref="M:System.Linq.Enumerable.SkipWhile``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})"/>
+        </member>
+        <member name="M:E_UtilPack.SkipWhile``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.ValueTask{System.Boolean}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="enumerable"></param>
+            <param name="asyncPredicate"></param>
+            <returns></returns>
+            <seealso cref="M:System.Linq.Enumerable.SkipWhile``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})"/>
+        </member>
+        <member name="M:E_UtilPack.SkipWhile``1(System.Collections.Generic.IAsyncEnumerator{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="enumerator"></param>
+            <param name="predicate"></param>
+            <returns></returns>
+            <seealso cref="M:System.Linq.Enumerable.SkipWhile``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})"/>
+        </member>
+        <member name="M:E_UtilPack.SkipWhile``1(System.Collections.Generic.IAsyncEnumerator{``0},System.Func{``0,System.Threading.Tasks.ValueTask{System.Boolean}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="enumerator"></param>
+            <param name="asyncPredicate"></param>
+            <returns></returns>
+            <seealso cref="M:System.Linq.Enumerable.SkipWhile``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})"/>
+        </member>
+        <member name="M:E_UtilPack.Take``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Int32)">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will return at most given amount of items.
+            </summary>
+            <typeparam name="T">The type of items.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="amount">The maximum amount of items to return. If zero or less, will return empty enumerable.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will return at most given amount of items.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.Take``1(System.Collections.Generic.IEnumerable{``0},System.Int32)"/>
+        </member>
+        <member name="M:E_UtilPack.Take``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Int64)">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will return at most given amount of items.
+            </summary>
+            <typeparam name="T">The type of items.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="amount">The maximum amount of items to return. If zero or less, will return empty enumerable.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will return at most given amount of items.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.Take``1(System.Collections.Generic.IEnumerable{``0},System.Int32)"/>
+        </member>
+        <member name="M:E_UtilPack.TakeWhile``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            This method returns new <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> that will include only the first elements of this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which satisfy condition expressed by given synchronous <paramref name="predicate"/>.
+            </summary>
+            <typeparam name="T">The type of elements being enumerated.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="predicate">The synchronous callback to check whether element satisfies condition.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will include only the first elements of this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which satisfy the condition expressed by <paramref name="predicate"/>.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="predicate"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.TakeWhile``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})"/>
+        </member>
+        <member name="M:E_UtilPack.TakeWhile``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.ValueTask{System.Boolean}})">
+            <summary>
+            This method returns new <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> that will include only the first elements of this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which satisfy condition expressed by given potentially asynchronous <paramref name="asyncPredicate"/>.
+            </summary>
+            <typeparam name="T">The type of elements being enumerated.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="asyncPredicate">The potentially asynchronous callback to check whether element satisfies condition.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will include only the first elements of this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which satisfy the condition expressed by <paramref name="asyncPredicate"/>.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="asyncPredicate"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.TakeWhile``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})"/>
+        </member>
+        <member name="M:E_UtilPack.Take``1(System.Collections.Generic.IAsyncEnumerator{``0},System.Int32)">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will return at most given amount of items.
+            </summary>
+            <typeparam name="T">The type of items.</typeparam>
+            <param name="enumerator">This <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.</param>
+            <param name="amount">The maximum amount of items to return. If zero or less, will return empty enumerable.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will return at most given amount of items.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.Take``1(System.Collections.Generic.IEnumerable{``0},System.Int32)"/>
+        </member>
+        <member name="M:E_UtilPack.Take``1(System.Collections.Generic.IAsyncEnumerator{``0},System.Int64)">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will return at most given amount of items.
+            </summary>
+            <typeparam name="T">The type of items.</typeparam>
+            <param name="enumerator">This <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.</param>
+            <param name="amount">The maximum amount of items to return. If zero or less, will return empty enumerable.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will return at most given amount of items.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.Take``1(System.Collections.Generic.IEnumerable{``0},System.Int32)"/>
+        </member>
+        <member name="M:E_UtilPack.AddToCollectionAsync``2(System.Collections.Generic.IAsyncEnumerable{``0},``1,System.Action{``1,``0})">
+            <summary>
+            General-purpose extension method to add all items of this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> to given collection.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <typeparam name="TCollection">The type of collection to add items to.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="collection">The collection to add to.</param>
+            <param name="addItem">The callback to add the to the <paramref name="collection"/>.</param>
+            <returns>Potentially asynchronously returns the amount of items encountered.</returns>
+            <remarks>
+            This method will always use <see cref="M:E_UtilPack.EnumerateSequentiallyAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Action{``0})"/> method to enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.
+            </remarks>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="addItem"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.AddToCollectionAsync``2(System.Collections.Generic.IAsyncEnumerable{``0},``1,System.Func{``1,``0,System.Threading.Tasks.Task})">
+            <summary>
+            General-purpose extension method to add all items of this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> to given collection.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <typeparam name="TCollection">The type of collection to add items to.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="collection">The collection to add to.</param>
+            <param name="addItem">The callback to add the to the <paramref name="collection"/>.</param>
+            <returns>Potentially asynchronously returns the amount of items encountered.</returns>
+            <remarks>
+            This method will always use <see cref="M:E_UtilPack.EnumerateSequentiallyAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task})"/> method to enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.
+            </remarks>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="addItem"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.ToArrayAsync``1(System.Collections.Generic.IAsyncEnumerable{``0})">
+            <summary>
+            This extension method will enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> into an array.
+            </summary>
+            <typeparam name="T">The type of items.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <returns>An array of enumerated items.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <remarks>
+            This method will always use <see cref="M:E_UtilPack.EnumerateSequentiallyAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Action{``0})"/> method to enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.
+            </remarks>
+        </member>
+        <member name="M:E_UtilPack.ToListAsync``1(System.Collections.Generic.IAsyncEnumerable{``0})">
+            <summary>
+            This extension method will enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> into a <see cref="T:System.Collections.Generic.List`1"/>.
+            </summary>
+            <typeparam name="T">The type of items.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <returns>A <see cref="T:System.Collections.Generic.List`1"/> of enumerated items.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <remarks>
+            This method will always use <see cref="M:E_UtilPack.EnumerateSequentiallyAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Action{``0})"/> method to enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.
+            </remarks>
+        </member>
+        <member name="M:E_UtilPack.ToDictionaryAsync``3(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1})">
+            <summary>
+            This extension method will enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> into a <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <typeparam name="TKey">The type of dictionary keys.</typeparam>
+            <typeparam name="TValue">The type of dictionary values.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="keySelector">The callback to create a dictionary key from enumerable item.</param>
+            <param name="valueSelector">The callback to create a dictionary value from enumerable item.</param>
+            <param name="equalityComparer">The optional <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> to use when creating dictionary.</param>
+            <returns>Asynchronously returns a <see cref="T:System.Collections.Generic.IDictionary`2"/> containing keys and values as returned by <paramref name="keySelector"/> and <paramref name="valueSelector"/>.</returns>
+            <remarks>
+            This method will always use <see cref="M:E_UtilPack.EnumerateSequentiallyAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Action{``0})"/> method to enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.
+            </remarks>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If either of <paramref name="keySelector"/> or <paramref name="valueSelector"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.ToDictionaryAsync``3(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.ValueTask{``1}},System.Func{``0,System.Threading.Tasks.ValueTask{``2}},System.Collections.Generic.IEqualityComparer{``1})">
+            <summary>
+            This extension method will enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> into a <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <typeparam name="TKey">The type of dictionary keys.</typeparam>
+            <typeparam name="TValue">The type of dictionary values.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="keySelector">The callback to potentially asynchronously create a dictionary key from enumerable item.</param>
+            <param name="valueSelector">The callback to potentially asynchronously create a dictionary value from enumerable item.</param>
+            <param name="equalityComparer">The optional <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> to use when creating dictionary.</param>
+            <returns>Asynchronously returns a <see cref="T:System.Collections.Generic.IDictionary`2"/> containing keys and values as returned by <paramref name="keySelector"/> and <paramref name="valueSelector"/>.</returns>
+            <remarks>
+            This method will always use <see cref="M:E_UtilPack.EnumerateSequentiallyAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task})"/> method to enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.
+            </remarks>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If either of <paramref name="keySelector"/> or <paramref name="valueSelector"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.AddToConcurrentCollectionAsync``2(System.Collections.Generic.IAsyncEnumerable{``0},``1,System.Action{``1,``0})">
+            <summary>
+            General-purpose extension method to add all items of this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> to given concurrent collection.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <typeparam name="TCollection">The type of collection to add items to.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="collection">The collection to add to.</param>
+            <param name="addItem">The callback to add the to the <paramref name="collection"/>. May be executed concurrently.</param>
+            <returns>Potentially asynchronously returns the amount of items encountered.</returns>
+            <remarks>
+            This method will always use <see cref="M:E_UtilPack.EnumerateConcurrentlyIfPossible``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Action{``0})"/> method to enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.
+            </remarks>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="addItem"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.AddToConcurrentCollectionAsync``2(System.Collections.Generic.IAsyncEnumerable{``0},``1,System.Func{``1,``0,System.Threading.Tasks.Task})">
+            <summary>
+            General-purpose extension method to add all items of this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> to given concurrent collection.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <typeparam name="TCollection">The type of collection to add items to.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="collection">The collection to add to.</param>
+            <param name="addItem">The callback to asynchronously add the to the <paramref name="collection"/>. May be executed concurrently.</param>
+            <returns>Potentially asynchronously returns the amount of items encountered.</returns>
+            <remarks>
+            This method will always use <see cref="M:E_UtilPack.EnumerateConcurrentlyIfPossible``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task})"/> method to enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.
+            </remarks>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="addItem"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.ToConcurrentBagAsync``1(System.Collections.Generic.IAsyncEnumerable{``0})">
+            <summary>
+            This extension method creates a new <see cref="T:System.Collections.Concurrent.ConcurrentBag`1"/> and possibly concurrently enumerates this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>, adding each encountered item to the <see cref="T:System.Collections.Concurrent.ConcurrentBag`1"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <returns>A new <see cref="T:System.Collections.Concurrent.ConcurrentBag`1"/> holding all items encountered while enumerating this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</returns>
+            <remarks>
+            This method will always use <see cref="M:E_UtilPack.EnumerateConcurrentlyIfPossible``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Action{``0})"/> method to enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.
+            </remarks>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.ToConcurrentQueueAsync``1(System.Collections.Generic.IAsyncEnumerable{``0})">
+            <summary>
+            This extension method creates a new <see cref="T:System.Collections.Concurrent.ConcurrentQueue`1"/> and possibly concurrently enumerates this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>, adding each encountered item to the <see cref="T:System.Collections.Concurrent.ConcurrentQueue`1"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <returns>A new <see cref="T:System.Collections.Concurrent.ConcurrentQueue`1"/> holding all items encountered while enumerating this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</returns>
+            <remarks>
+            This method will always use <see cref="M:E_UtilPack.EnumerateConcurrentlyIfPossible``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Action{``0})"/> method to enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.
+            </remarks>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.ToConcurrentStackAsync``1(System.Collections.Generic.IAsyncEnumerable{``0})">
+            <summary>
+            This extension method creates a new <see cref="T:System.Collections.Concurrent.ConcurrentStack`1"/> and possibly concurrently enumerates this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>, adding each encountered item to the <see cref="T:System.Collections.Concurrent.ConcurrentStack`1"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <returns>A new <see cref="T:System.Collections.Concurrent.ConcurrentStack`1"/> holding all items encountered while enumerating this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</returns>
+            <remarks>
+            This method will always use <see cref="M:E_UtilPack.EnumerateConcurrentlyIfPossible``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Action{``0})"/> method to enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.
+            </remarks>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.ToConcurrentBagAsync``2(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1}})">
+            <summary>
+            This extension method creates a new <see cref="T:System.Collections.Concurrent.ConcurrentBag`1"/> and possibly concurrently enumerates this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>, adding each encountered item transformed by given <paramref name="selector"/> to the <see cref="T:System.Collections.Concurrent.ConcurrentBag`1"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <typeparam name="U">The type of items added to <see cref="T:System.Collections.Concurrent.ConcurrentBag`1"/>.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="selector">The callback to asynchronously select an object to be added to <see cref="T:System.Collections.Concurrent.ConcurrentBag`1"/>.</param>
+            <returns>A new <see cref="T:System.Collections.Concurrent.ConcurrentBag`1"/> holding all transformed items encountered while enumerating this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</returns>
+            <remarks>
+            <para>
+            The motivation for this method is that often the items enumerated by <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> are "incomplete" in a sense that they require additional asynchronous processing (e.g. reading SQL row values, or reading the content of HTTP response).
+            Using <see cref="M:E_UtilPack.Select``2(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.ValueTask{``1}})"/> method will force the <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> into sequential enumerable, which may be undesired.
+            Therefore, using this method directly it is possible to enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> possibly concurrently into <see cref="T:System.Collections.Concurrent.ConcurrentBag`1"/> while transforming each enumerable item into other type.
+            </para>
+            <para>
+            This method will always use <see cref="M:E_UtilPack.EnumerateConcurrentlyIfPossible``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Action{``0})"/> method to enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:E_UtilPack.ToConcurrentQueueAsync``2(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1}})">
+            <summary>
+            This extension method creates a new <see cref="T:System.Collections.Concurrent.ConcurrentQueue`1"/> and possibly concurrently enumerates this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>, adding each encountered item transformed by given <paramref name="selector"/> to the <see cref="T:System.Collections.Concurrent.ConcurrentQueue`1"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <typeparam name="U">The type of items added to <see cref="T:System.Collections.Concurrent.ConcurrentQueue`1"/>.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="selector">The callback to asynchronously select an object to be added to <see cref="T:System.Collections.Concurrent.ConcurrentQueue`1"/>.</param>
+            <returns>A new <see cref="T:System.Collections.Concurrent.ConcurrentQueue`1"/> holding all transformed items encountered while enumerating this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</returns>
+            <remarks>
+            <para>
+            The motivation for this method is that often the items enumerated by <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> are "incomplete" in a sense that they require additional asynchronous processing (e.g. reading SQL row values, or reading the content of HTTP response).
+            Using <see cref="M:E_UtilPack.Select``2(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.ValueTask{``1}})"/> method will force the <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> into sequential enumerable, which may be undesired.
+            Therefore, using this method directly it is possible to enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> possibly concurrently into <see cref="T:System.Collections.Concurrent.ConcurrentQueue`1"/> while transforming each enumerable item into other type.
+            </para>
+            <para>
+            This method will always use <see cref="M:E_UtilPack.EnumerateConcurrentlyIfPossible``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Action{``0})"/> method to enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:E_UtilPack.ToConcurrentStackAsync``2(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{``1}})">
+            <summary>
+            This extension method creates a new <see cref="T:System.Collections.Concurrent.ConcurrentStack`1"/> and possibly concurrently enumerates this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>, adding each encountered item transformed by given <paramref name="selector"/> to the <see cref="T:System.Collections.Concurrent.ConcurrentStack`1"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <typeparam name="U">The type of items added to <see cref="T:System.Collections.Concurrent.ConcurrentStack`1"/>.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="selector">The callback to asynchronously select an object to be added to <see cref="T:System.Collections.Concurrent.ConcurrentStack`1"/>.</param>
+            <returns>A new <see cref="T:System.Collections.Concurrent.ConcurrentStack`1"/> holding all transformed items encountered while enumerating this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</returns>
+            <remarks>
+            <para>
+            The motivation for this method is that often the items enumerated by <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> are "incomplete" in a sense that they require additional asynchronous processing (e.g. reading SQL row values, or reading the content of HTTP response).
+            Using <see cref="M:E_UtilPack.Select``2(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.ValueTask{``1}})"/> method will force the <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> into sequential enumerable, which may be undesired.
+            Therefore, using this method directly it is possible to enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> possibly concurrently into <see cref="T:System.Collections.Concurrent.ConcurrentStack`1"/> while transforming each enumerable item into other type.
+            </para>
+            <para>
+            This method will always use <see cref="M:E_UtilPack.EnumerateConcurrentlyIfPossible``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Action{``0})"/> method to enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:E_UtilPack.ToConcurrentDictionaryAsync``3(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1})">
+            <summary>
+            This extension method will possibly concurrently enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> into a <see cref="T:System.Collections.Concurrent.ConcurrentDictionary`2"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <typeparam name="TKey">The type of dictionary keys.</typeparam>
+            <typeparam name="TValue">The type of dictionary values.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="keySelector">The callback to create a dictionary key from enumerable item.</param>
+            <param name="valueSelector">The callback to create a dictionary value from enumerable item.</param>
+            <param name="equalityComparer">The optional <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> to use when creating dictionary.</param>
+            <returns>Asynchronously returns a <see cref="T:System.Collections.Generic.IDictionary`2"/> containing keys and values as returned by <paramref name="keySelector"/> and <paramref name="valueSelector"/>.</returns>
+            <remarks>
+            <para>This method will always use <see cref="M:E_UtilPack.EnumerateConcurrentlyIfPossible``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Action{``0})"/> method to enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.
+            </para>
+            <para>
+            TODO currently this will not throw if there are duplicate keys, unlike <see cref="M:E_UtilPack.ToDictionaryAsync``3(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1})"/> method.
+            The behaviour needs to be unified/parametrized at some point.
+            </para>
+            </remarks>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If either of <paramref name="keySelector"/> or <paramref name="valueSelector"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.ToConcurrentDictionaryAsync``3(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.ValueTask{``1}},System.Func{``0,System.Threading.Tasks.ValueTask{``2}},System.Collections.Generic.IEqualityComparer{``1})">
+            <summary>
+            This extension method will possibly concurrently enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> into a <see cref="T:System.Collections.Concurrent.ConcurrentDictionary`2"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <typeparam name="TKey">The type of dictionary keys.</typeparam>
+            <typeparam name="TValue">The type of dictionary values.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="keySelector">The callback to potentially asynchronously create a dictionary key from enumerable item.</param>
+            <param name="valueSelector">The callback to potentially asynchronously create a dictionary value from enumerable item.</param>
+            <param name="equalityComparer">The optional <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> to use when creating dictionary.</param>
+            <returns>Asynchronously returns a <see cref="T:System.Collections.Generic.IDictionary`2"/> containing keys and values as returned by <paramref name="keySelector"/> and <paramref name="valueSelector"/>.</returns>
+            <remarks>
+            <para>This method will always use <see cref="M:E_UtilPack.EnumerateConcurrentlyIfPossible``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Action{``0})"/> method to enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.
+            </para>
+            <para>
+            TODO currently this will not throw if there are duplicate keys, unlike <see cref="M:E_UtilPack.ToDictionaryAsync``3(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1})"/> method.
+            The behaviour needs to be unified/parametrized at some point.
+            </para>
+            </remarks>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If either of <paramref name="keySelector"/> or <paramref name="valueSelector"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.Where``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will filter items based on given predicate callback.
+            </summary>
+            <typeparam name="T">The type of items.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="predicate">The callback which will filter the results. By returning <c>true</c>, the result will be included in returned enumerable; otherwise not.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will filter items based on given predicate callback.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="predicate"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.Where``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})"/>
+        </member>
+        <member name="M:E_UtilPack.Where``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.ValueTask{System.Boolean}})">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will filter items based on given asynchronous predicate callback.
+            </summary>
+            <typeparam name="T">The type of items.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="asyncPredicate">The callback which will asynchronously filter the results. By returning <c>true</c>, the result will be included in returned enumerable; otherwise not.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will filter items based on given predicate callback.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="asyncPredicate"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.Where``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})"/>
+        </member>
+        <member name="M:E_UtilPack.Where``1(System.Collections.Generic.IAsyncEnumerator{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will filter items based on given predicate callback.
+            </summary>
+            <typeparam name="T">The type of items.</typeparam>
+            <param name="enumerator">This <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.</param>
+            <param name="predicate">The callback which will filter the results. By returning <c>true</c>, the result will be included in returned enumerator; otherwise not.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will filter items based on given predicate callback.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="predicate"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.Where``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})"/>
+        </member>
+        <member name="M:E_UtilPack.Where``1(System.Collections.Generic.IAsyncEnumerator{``0},System.Func{``0,System.Threading.Tasks.ValueTask{System.Boolean}})">
+            <summary>
+            This extension method will return <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will filter items based on given asynchronous predicate callback.
+            </summary>
+            <typeparam name="T">The type of items.</typeparam>
+            <param name="enumerator">This <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.</param>
+            <param name="asyncPredicate">The callback which will asynchronously filter the results. By returning <c>true</c>, the result will be included in returned enumerator; otherwise not.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will filter items based on given predicate callback.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="asyncPredicate"/> is <c>null</c>.</exception>
+            <seealso cref="M:System.Linq.Enumerable.Where``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})"/>
+        </member>
+        <member name="M:E_UtilPack.AsConcurrentEnumerable``1(System.Collections.Generic.IAsyncEnumerable{``0})">
+            <summary>
+            This method wraps this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> into a <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> (if it is not already <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/>).
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <returns>A <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> which will use this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> as its underlying source.</returns>
+            <remarks>
+            The returned <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> will still call this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> in sequential fashion.
+            </remarks>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.EnumerateConcurrentlyAsync``1(UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable{``0},System.Action{``0},UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments)">
+            <summary>
+            Enumerates this <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> concurrently as specified by given <see cref="T:UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <param name="enumerable">This <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/>.</param>
+            <param name="action">The synchronous callback to run for each encountered item. This callback may be invoked concurrently.</param>
+            <param name="arguments">The <see cref="T:UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments"/> controlling and limiting concurrency.</param>
+            <returns>A task which completes when this <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> is fully enumerated.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.EnumerateConcurrentlyAsync``1(UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task},UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments)">
+            <summary>
+            Enumerates this <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> concurrently as specified by given <see cref="T:UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <param name="enumerable">This <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/>.</param>
+            <param name="asyncAction">The asynchronous callback to run for each encountered item. This callback may be invoked concurrently.</param>
+            <param name="arguments">The <see cref="T:UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments"/> controlling and limiting concurrency.</param>
+            <returns>A task which completes when this <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> is fully enumerated and all tasks started by <paramref name="asyncAction"/> are completed.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.EnumerateConcurrentlyIfPossible``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Action{``0})">
+            <summary>
+            This method will call the <see cref="M:E_UtilPack.EnumerateConcurrentlyAsync``1(UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable{``0},System.Action{``0},UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments)"/> method if this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/>.
+            Otherwise it will call the <see cref="M:E_UtilPack.EnumerateSequentiallyAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Action{``0})"/> method.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which may be <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/>.</param>
+            <param name="action">The callback to call for each encountered item.</param>
+            <returns>A task which asynchronously returns amount of items encountered.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.EnumerateConcurrentlyIfPossible``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task})">
+            <summary>
+            This method will call the <see cref="M:E_UtilPack.EnumerateConcurrentlyAsync``1(UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task},UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments)"/> method if this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/>.
+            Otherwise it will call the <see cref="M:E_UtilPack.EnumerateSequentiallyAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task})"/> method.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which may be <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/>.</param>
+            <param name="asyncAction">The asynchronous callback to call for each encountered item.</param>
+            <returns>A task which asynchronously returns amount of items encountered.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.EnumerateSequentiallyAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Action{``0})">
+            <summary>
+            This is helper method to sequentially enumerate a <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> and properly dispose it in case of exception.
+            </summary>
+            <typeparam name="T">The type of the items being enumerated.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="action">The callback to invoke for each item. May be <c>null</c>.</param>
+            <returns>A task which will have enumerated the <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> on completion. The return value is amount of items encountered during enumeration.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.OverflowException">If there are more than <see cref="F:System.Int64.MaxValue"/> amount of items encountered.</exception>
+            <remarks>
+            Sequential enumeration means that the next invocation of <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/> will not start until the given callback <paramref name="action"/> is completed.
+            </remarks>
+        </member>
+        <member name="M:E_UtilPack.EnumerateSequentiallyAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task})">
+            <summary>
+            This is helper method to sequentially enumerate a <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> and properly dispose it in case of an exception.
+            For each item, a task from given callback is awaited for, if the callback is not <c>null</c>.
+            </summary>
+            <typeparam name="T">The type of the items being enumerated.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="asyncAction">The callback to invoke for each item. May be <c>null</c>, and may also return <c>null</c>.</param>
+            <returns>A task which will have enumerated the <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> on completion. The return value is amount of items encountered during enumeration.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.OverflowException">If there are more than <see cref="F:System.Int64.MaxValue"/> amount of items encountered.</exception>
+            <remarks>
+            Sequential enumeration means that the next invocation of <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/> will not start until the given callback <paramref name="asyncAction"/> is completed, synchronously or asynchronously.
+            </remarks>
+        </member>
+        <member name="M:E_UtilPack.EnumerateSequentiallyAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            This is helper method to sequentially enumerate a <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> and properly dispose it in case of an exception, while allowing early exit.
+            </summary>
+            <typeparam name="T">The type of the items being enumerated.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="callback">The synchronous callback invoked for each element of this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <returns>A task which will have enumerated the <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> on completion. The return value is amount of items encountered during enumeration.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.OverflowException">If there are more than <see cref="F:System.Int64.MaxValue"/> amount of items encountered.</exception>
+            <remarks>
+            Sequential enumeration means that the next invocation of <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/> will not start until the given callback <paramref name="callback"/> is completed, synchronously or asynchronously.
+            </remarks>
+        </member>
+        <member name="M:E_UtilPack.EnumerateSequentiallyAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task{System.Boolean}})">
+            <summary>
+            This is helper method to sequentially enumerate a <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> and properly dispose it in case of an exception, while allowing early exit.
+            </summary>
+            <typeparam name="T">The type of the items being enumerated.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="asyncCallback">The potentially asynchronous callback invoked for each element of this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <returns>A task which will have enumerated the <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> on completion. The return value is amount of items encountered during enumeration.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.OverflowException">If there are more than <see cref="F:System.Int64.MaxValue"/> amount of items encountered.</exception>
+            <remarks>
+            Sequential enumeration means that the next invocation of <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/> will not start until the given callback <paramref name="asyncCallback"/> is completed, synchronously or asynchronously.
+            </remarks>
+        </member>
+        <member name="M:E_UtilPack.EnumerateSequentiallyAsync``1(System.Collections.Generic.IAsyncEnumerable{``0})">
+            <summary>
+            This is helper method to sequentially enumerate a <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> and properly dispose it in case of an exception, while not reacting to any of the encountered elements.
+            </summary>
+            <typeparam name="T">The type of the items being enumerated.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <returns>A task which will have enumerated the <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> on completion. The return value is amount of items encountered during enumeration.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+            <exception cref="T:System.OverflowException">If there are more than <see cref="F:System.Int64.MaxValue"/> amount of items encountered.</exception>
+            <remarks>
+            Sequential enumeration means that the next invocation of <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/> will not start until all the elements are seen throught <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.TryGetNext(System.Boolean@)"/>.
+            </remarks>
+        </member>
+        <member name="M:E_UtilPack.AsObservable``1(UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable{``0})">
+            <summary>
+            Adds observability aspect to this <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/>, if it is not already present.
+            </summary>
+            <typeparam name="T">The type of enumerable items.</typeparam>
+            <param name="enumerable">This <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/>.</param>
+            <returns>A <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerableObservable`1"/>.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.AsObservable``1(UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource{``0})">
+            <summary>
+            Adds observability aspect to this <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource`1"/>, if it is not already present.
+            </summary>
+            <typeparam name="T">The type of enumerable items.</typeparam>
+            <param name="source">This <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource`1"/>.</param>
+            <returns>A <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSourceObservable`1"/>.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource`1"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.AsObservable``2(UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable{``0},``1)">
+            <summary>
+            Adds observability with metadata -aspect to this <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/>, if it is not already present.
+            </summary>
+            <typeparam name="T">The type of enumerable items.</typeparam>
+            <typeparam name="TMetadata">The type of metadata.</typeparam>
+            <param name="enumerable">This <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/>.</param>
+            <param name="metadata">The metadata to have.</param>
+            <returns>A <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerableObservable`2"/>.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.AsConcurrentEnumerable``2(UtilPack.AsyncEnumeration.IAsyncEnumerableObservable{``0,``1})">
+            <summary>
+            Adds concurrent enumeration aspect to this <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumerableObservable`2"/>, if it is not already present.
+            </summary>
+            <typeparam name="T">The type of enumerable items.</typeparam>
+            <typeparam name="TMetadata">The type of metadata.</typeparam>
+            <param name="enumerable">This <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumerableObservable`2"/>.</param>
+            <returns>A <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerableObservable`2"/>.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumerableObservable`2"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.AsObservable``2(UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource{``0},``1)">
+            <summary>
+            Adds observability with metadata -aspect to this <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource`1"/>, if it is not already present.
+            </summary>
+            <typeparam name="T">The type of enumerable items.</typeparam>
+            <typeparam name="TMetadata">The type of metadata.</typeparam>
+            <param name="source">This <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource`1"/>.</param>
+            <param name="metadata">The metadata to have.</param>
+            <returns>A <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSourceObservable`2"/>.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource`1"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.AsObservable``1(System.Collections.Generic.IAsyncEnumerable{``0})">
+            <summary>
+            Adds observability aspect to this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>, if it is not already present.
+            </summary>
+            <typeparam name="T">The type of enumerable items.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <returns>A <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumerableObservable`1"/>.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.AsObservable``2(System.Collections.Generic.IAsyncEnumerable{``0},``1)">
+            <summary>
+            Adds observability with metadata -aspect to this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>, if it is not already present.
+            </summary>
+            <typeparam name="T">The type of enumerable items.</typeparam>
+            <typeparam name="TMetadata">The type of metadata.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</param>
+            <param name="metadata">The metadata to have.</param>
+            <returns>A <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumerableObservable`2"/>.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.AsObservable``1(System.Collections.Generic.IAsyncEnumerator{``0})">
+            <summary>
+            Adds observability aspect to this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>, if it is not already present.
+            </summary>
+            <typeparam name="T">The type of enumerable items.</typeparam>
+            <param name="enumerator">This <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.</param>
+            <returns>A <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumeratorObservable`1"/>.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:E_UtilPack.AsObservable``2(System.Collections.Generic.IAsyncEnumerator{``0},``1)">
+            <summary>
+            Adds observability with metadata -aspect to this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>, if it is not already present.
+            </summary>
+            <typeparam name="T">The type of enumerable items.</typeparam>
+            <typeparam name="TMetadata">The type of metadata.</typeparam>
+            <param name="enumerator">This <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.</param>
+            <param name="metadata">The metadata to have.</param>
+            <returns>A <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumerableObservable`2"/>.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> is <c>null</c>.</exception>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.LINQ.OfTypeInfo`1">
+            <summary>
+            This struct exists purely for the purpose of invoking <see cref="M:E_UtilPack.OfType``2(System.Collections.Generic.IAsyncEnumerable{``0})"/> method without supplying both generic type arguments.
+            </summary>
+            <typeparam name="T">The target type.</typeparam>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.LINQ.OfTypeInfo`1.Get">
+            <summary>
+            Gets the <see cref="T:UtilPack.AsyncEnumeration.LINQ.OfTypeInfo`1"/> instance capturing type information.
+            </summary>
+            <returns>A <see cref="T:UtilPack.AsyncEnumeration.LINQ.OfTypeInfo`1"/> instance capturing type information.</returns>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.UtilPackExtensions">
+            <summary>
+            This class contains extension methods for types not defined in this assembly.
+            </summary>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.UtilPackExtensions.AsAsyncEnumerable``1(``0[])">
+            <summary>
+            This extension method will wrap this array into <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.
+            </summary>
+            <typeparam name="T">The type of array elements.</typeparam>
+            <param name="array">This array.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will enumerate over the contents of the array.</returns>
+            <exception cref="T:System.NullReferenceException">If this array is <c>null</c>.</exception>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.UtilPackExtensions.AsAsyncEnumerable``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            This extension method will wrap this <see cref="T:System.Collections.Generic.IEnumerable`1"/> into <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.
+            </summary>
+            <typeparam name="T">The type of <see cref="T:System.Collections.Generic.IEnumerable`1"/> elements.</typeparam>
+            <param name="enumerable">This <see cref="T:System.Collections.Generic.IEnumerable`1"/>.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will enumerate over this <see cref="T:System.Collections.Generic.IEnumerable`1"/>.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Collections.Generic.IEnumerable`1"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.UtilPackExtensions.AsSingletonAsync``1(``0)">
+            <summary>
+            Encapsulates this single value as <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> containing only this value.
+            </summary>
+            <typeparam name="T">The type of this value.</typeparam>
+            <param name="value">This value</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> containing only this value.</returns>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.UtilPackExtensions.AsSingletonAsync``1(System.Threading.Tasks.Task{``0})">
+            <summary>
+            Encapsulates this asynchronous value as <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> containing only this value.
+            </summary>
+            <typeparam name="T">The type of this value.</typeparam>
+            <param name="task">The task acquiring this value.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> containing only this value.</returns>
+            <exception cref="T:System.NullReferenceException">If this <see cref="T:System.Threading.Tasks.Task`1"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.UtilPackExtensions.AsSingletonAsync``1(System.Threading.Tasks.ValueTask{``0})">
+            <summary>
+            Encapsulates this asynchronous value as <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> containing only this value.
+            </summary>
+            <typeparam name="T">The type of this value.</typeparam>
+            <param name="task">The task acquiring this value.</param>
+            <returns><see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> containing only this value.</returns>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.AsyncEnumerable">
+            <summary>
+            This class provides some general ways to generate instances of <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> and <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/>, similar to how <see cref="T:System.Linq.Enumerable"/> provides general ways to generate instances of <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
+            </summary>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.AsyncEnumerable.Repeat``1(``0,System.Int32)">
+            <summary>
+            Returns <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> (which is also <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>) that will return the given item specified amount of times.
+            </summary>
+            <typeparam name="T">The type of item to repeat.</typeparam>
+            <param name="item">The item to repeat.</param>
+            <param name="count">Amount of times to repeat the <paramref name="item"/>.</param>
+            <returns>An empty <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> if <paramref name="count"/> is <c>0</c> or less; otherwise returns <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> which will repeat <paramref name="item"/> <paramref name="count"/> amount of times.</returns>
+            <seealso cref="M:System.Linq.Enumerable.Repeat``1(``0,System.Int32)"/>
+            <seealso cref="M:UtilPack.AsyncEnumeration.AsyncEnumerable.Repeat``1(``0,System.Int64)"/>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.AsyncEnumerable.Repeat``1(``0,System.Int64)">
+            <summary>
+            Returns <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> (which is also <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>) that will return the given item specified amount of times, expressed as 64-bit integer.
+            </summary>
+            <typeparam name="T">The type of item to repeat.</typeparam>
+            <param name="item">The item to repeat.</param>
+            <param name="count">Amount of times to repeat the <paramref name="item"/>, as 64-bit integer.</param>
+            <returns>An empty <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> if <paramref name="count"/> is <c>0</c> or less; otherwise returns <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> which will repeat <paramref name="item"/> <paramref name="count"/> amount of times.</returns>
+            <seealso cref="M:System.Linq.Enumerable.Repeat``1(``0,System.Int32)"/>
+            <seealso cref="M:UtilPack.AsyncEnumeration.AsyncEnumerable.Repeat``1(``0,System.Int32)"/>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.AsyncEnumerable.Repeat``1(System.Func{``0},System.Int32)">
+            <summary>
+            Returns <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> (which is also <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>) that will return the result of given synchronous item factory callback specified amount of times.
+            </summary>
+            <typeparam name="T">The type of item to repeat.</typeparam>
+            <param name="generator">The synchronous callback to generate an item to repeat.</param>
+            <param name="count">Amount of times to repeat the item.</param>
+            <returns>An empty <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> if <paramref name="count"/> is <c>0</c> or less; otherwise returns <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> which will repeat result of calling <paramref name="generator"/> <paramref name="count"/> amount of times.</returns>
+            <seealso cref="M:System.Linq.Enumerable.Repeat``1(``0,System.Int32)"/>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.AsyncEnumerable.Repeat``1(System.Func{System.Threading.Tasks.ValueTask{``0}},System.Int32)">
+            <summary>
+            Returns <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> (which is also <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>) that will return the result of given potentially asynchronous item factory callback specified amount of times.
+            </summary>
+            <typeparam name="T">The type of item to repeat.</typeparam>
+            <param name="asyncGenerator">The potentially asynchronous callback to generate an item to repeat.</param>
+            <param name="count">Amount of times to repeat the item.</param>
+            <returns>An empty <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> if <paramref name="count"/> is <c>0</c> or less; otherwise returns <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> which will repeat result of calling <paramref name="asyncGenerator"/> <paramref name="count"/> amount of times.</returns>
+            <seealso cref="M:System.Linq.Enumerable.Repeat``1(``0,System.Int32)"/>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.AsyncEnumerable.Range(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> (which is also <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>) that will return numbers in given range specification.
+            </summary>
+            <param name="initial">The start of the range, inclusive.</param>
+            <param name="target">The end of the range, exclusive.</param>
+            <param name="step">The amount to increase for each number within the range. By default, is <c>1</c> for increasing ranges, and <c>-1</c> for decreasing ranges. Specifying invalid values will reset this to default value.</param>
+            <returns>An enumerable that contains numbers within the given range specification.</returns>
+            <remarks>
+            Note that unlike <see cref="M:System.Linq.Enumerable.Range(System.Int32,System.Int32)"/>, this method has exclusive _maximum_ amount as second parameter, instead of amount of values to generate.
+            This method also handles both increasing and decreasing number ranges.
+            </remarks>
+            <seealso cref="M:System.Linq.Enumerable.Range(System.Int32,System.Int32)"/>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.AsyncEnumerable.Range(System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Returns <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> (which is also <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>) that will return numbers in given range specification, as 64-bit integers.
+            </summary>
+            <param name="initial">The start of the range, inclusive.</param>
+            <param name="target">The end of the range, exclusive.</param>
+            <param name="step">The amount to increase for each number within the range. By default, is <c>1</c> for increasing ranges, and <c>-1</c> for decreasing ranges. Specifying invalid values will reset this to default value.</param>
+            <returns>An enumerable that contains numbers within the given range specification.</returns>
+            <remarks>
+            Note that unlike <see cref="M:System.Linq.Enumerable.Range(System.Int32,System.Int32)"/>, this method has exclusive _maximum_ amount as second parameter, instead of amount of values to generate.
+            This method also handles both increasing and decreasing number ranges.
+            </remarks>
+            <seealso cref="M:System.Linq.Enumerable.Range(System.Int32,System.Int32)"/>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.AsyncEnumerable.Neverending``1(``0)">
+            <summary>
+            Returns <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> (which is also <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>) that will indefinetly repeat the given value.
+            </summary>
+            <typeparam name="T">The type of item to repeat.</typeparam>
+            <param name="item">An item to repeat.</param>
+            <returns>An enumerable that will indefinetly repeat the given value.</returns>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.AsyncEnumerable.Neverending``1(System.Func{``0})">
+            <summary>
+            Returns <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> (which is also <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>) that will indefinetly repeat the value returned by given synchronous factory callback.
+            </summary>
+            <typeparam name="T">The type of item to repeat.</typeparam>
+            <param name="generator">A synchronous callback to dynamically generate the value to repeat.</param>
+            <returns>An enumerable that will indefinetly repeat the given value.</returns>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.AsyncEnumerable.Neverending``1(System.Func{System.Threading.Tasks.ValueTask{``0}})">
+            <summary>
+            Returns <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> (which is also <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>) that will indefinetly repeat the value returned by given potentially asynchronous factory callback.
+            </summary>
+            <typeparam name="T">The type of item to repeat.</typeparam>
+            <param name="asyncGenerator">A potentially asynchronous callback to dynamically generate the value to repeat.</param>
+            <returns>An enumerable that will indefinetly repeat the given value.</returns>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.EmptyAsync`1">
+            <summary>
+            This is utility class for various empty asynchronous enumerables and enumerators.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+        </member>
+        <member name="P:UtilPack.AsyncEnumeration.EmptyAsync`1.Enumerator">
+            <summary>
+            Gets the <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will return no items.
+            </summary>
+            <value>The <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which will return no items.</value>
+        </member>
+        <member name="P:UtilPack.AsyncEnumeration.EmptyAsync`1.Enumerable">
+            <summary>
+            Gets the <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> which will always return <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> with no items.
+            </summary>
+            <value>The <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> which will always return <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> with no items.</value>
+        </member>
+        <member name="P:UtilPack.AsyncEnumeration.EmptyAsync`1.ConcurrentEnumeratorSource">
+            <summary>
+            Gets the <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource`1"/> which will return no items on enumeration.
+            </summary>
+            <value>The <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource`1"/> which will return no items on enumeration.</value>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1">
+            <summary>
+            This interface extends <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> to provide ability to enumerate concurrently asynchronously - the task returned by enumeration callback is not waited before acquiring next item.
+            </summary>
+            <typeparam name="T">The type of items being enumerated. This parameter is covariant.</typeparam>
+            <seealso cref="M:E_UtilPack.AsConcurrentEnumerable``1(System.Collections.Generic.IAsyncEnumerable{``0})"/>
+            <seealso cref="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateConcurrentEnumerable``2(System.Func{UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo{``0,``1}})"/>
+            <seealso cref="M:E_UtilPack.EnumerateConcurrentlyAsync``1(UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable{``0},System.Action{``0},UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments)"/>
+            <seealso cref="M:E_UtilPack.EnumerateConcurrentlyAsync``1(UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task},UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments)"/>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1.GetConcurrentEnumeratorSource(UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments)">
+            <summary>
+            This method will return <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource`1"/> that can be used to enumerate this <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> concurrently.
+            </summary>
+            <param name="arguments">The <see cref="T:UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments"/> specifying how the returned <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource`1"/> will behave concurrently-wise.</param>
+            <returns>A <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource`1"/> that can be used to enumerate concurrently.</returns>
+            <remarks>
+            Typically this method is not used directly, but instead <see cref="M:E_UtilPack.EnumerateConcurrentlyAsync``1(UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable{``0},System.Action{``0},UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments)"/> or <see cref="M:E_UtilPack.EnumerateConcurrentlyAsync``1(UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task},UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments)"/> methods are used.
+            </remarks>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource`1">
+            <summary>
+            This interface provides a source to enumerate <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> concurrently.
+            Typically, this interface is not used directly, but instead the <see cref="M:E_UtilPack.EnumerateConcurrentlyAsync``1(UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable{``0},System.Action{``0},UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments)"/> or <see cref="M:E_UtilPack.EnumerateConcurrentlyAsync``1(UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task},UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments)"/> methods are used.
+            </summary>
+            <typeparam name="T">The type of items being enumerated. This parameter is covariant.</typeparam>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource`1.GetAsyncEnumeratorsEnumerable">
+            <summary>
+            Gets the synchronous <see cref="T:System.Collections.Generic.IEnumerable`1"/> containing all <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> objects that will be enumerated concurrently.
+            </summary>
+            <returns>The synchronous <see cref="T:System.Collections.Generic.IEnumerable`1"/> containing all <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> objects that will be enumerated concurrently.</returns>
+            <remarks>
+            This method is invoked first by <see cref="M:E_UtilPack.EnumerateConcurrentlyAsync``1(UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable{``0},System.Action{``0},UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments)"/> and <see cref="M:E_UtilPack.EnumerateConcurrentlyAsync``1(UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task},UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments)"/>.
+            If this returns <c>null</c>, then <see cref="M:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource`1.GetWrappedSynchronousSource"/> is used.
+            </remarks>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource`1.GetWrappedSynchronousSource">
+            <summary>
+            This method will be used *only* if <see cref="M:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource`1.GetAsyncEnumeratorsEnumerable"/> returns <c>null</c>.
+            </summary>
+            <returns>Wrapped synchronous enumeration source, or <c>null</c>.</returns>
+            <remarks>
+            The behaviour of <see cref="M:E_UtilPack.EnumerateConcurrentlyAsync``1(UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable{``0},System.Action{``0},UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments)"/> and <see cref="M:E_UtilPack.EnumerateConcurrentlyAsync``1(UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task},UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments)"/> when using this method is to simply start a new task which will execute the given callback, and then immediately enumerate next item of sequential <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.
+            </remarks>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments">
+            <summary>
+            This struct contains arguments affecting how <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource`1"/> will behave when created by <see cref="M:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1.GetConcurrentEnumeratorSource(UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments)"/>
+            </summary>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments.#ctor(System.Int32)">
+            <summary>
+            Creates a new instance of <see cref="T:UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments"/>.
+            </summary>
+            <param name="maximumConcurrentTasks">The maximum amount of concurrent tasks when enumerating. If ≤ 0, then enumeration will have no concurrent task limit.</param>
+        </member>
+        <member name="P:UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments.MaximumConcurrentTasks">
+            <summary>
+            Gets the maximum amount of concurrent tasks when enumerating.
+            If ≤ 0, then enumeration will have no concurrent task limit.
+            </summary>
+            <value>The maximum amount of concurrent tasks when enumerating.</value>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.EnumerableWrapper`1">
+            <summary>
+            This is helper utility class to provide callback-based <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> creation.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.EnumerableWrapper`1.#ctor(System.Func{System.Collections.Generic.IAsyncEnumerator{`0}})">
+            <summary>
+            Creates a new instance of <see cref="T:UtilPack.AsyncEnumeration.EnumerableWrapper`1"/> with given callback.
+            </summary>
+            <param name="getEnumerator">The callback to create <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.</param>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="getEnumerator"/> is <c>null</c>.</exception>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.AsyncEnumerationFactory">
+            <summary>
+            This class provides static factory methods to create objects of type <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.
+            </summary>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateSequentialEnumerable``1(System.Func{UtilPack.AsyncEnumeration.SequentialEnumerationStartInfo{``0}})">
+            <summary>
+            Creates a new instance of <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> with given callback to create <see cref="T:UtilPack.AsyncEnumeration.SequentialEnumerationStartInfo`1"/> for each new <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <param name="enumerationStart">The callback to create a new <see cref="T:UtilPack.AsyncEnumeration.SequentialEnumerationStartInfo`1"/> for each new <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.</param>
+            <returns>A new instance of <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which behaves like <see cref="T:UtilPack.AsyncEnumeration.SequentialEnumerationStartInfo`1"/> returned by <paramref name="enumerationStart"/> specifies.</returns>
+            <remarks>
+            If <paramref name="enumerationStart"/> is <c>null</c>, then result is empty enumerable.
+            </remarks>
+            <seealso cref="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateSequentialStartInfo``1(UtilPack.AsyncEnumeration.MoveNextAsyncDelegate{``0},UtilPack.AsyncEnumeration.EnumerationEndedDelegate)"/>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateExclusiveSequentialEnumerable``1(UtilPack.AsyncEnumeration.SequentialEnumerationStartInfo{``0})">
+            <summary>
+            Creates a new <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which will allow at most one <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> to be active at once.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <param name="startInfo">The <see cref="T:UtilPack.AsyncEnumeration.SequentialEnumerationStartInfo`1"/> containing callbacks to use.</param>
+            <returns>A new instance of <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> which behaves like callbacks in <paramref name="startInfo"/> specified.</returns>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateSequentialStartInfo``1(UtilPack.AsyncEnumeration.MoveNextAsyncDelegate{``0},UtilPack.AsyncEnumeration.EnumerationEndedDelegate)">
+            <summary>
+            Helper method to invoke constructor of <see cref="T:UtilPack.AsyncEnumeration.SequentialEnumerationStartInfo`1"/> without explicitly specifying generic type arguments.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <param name="moveNext">The callback for potentially asynchronously fetching next item.</param>
+            <param name="dispose">The callback to dispose enumerator.</param>
+            <returns>A new <see cref="T:UtilPack.AsyncEnumeration.SequentialEnumerationStartInfo`1"/>.</returns>
+            <seealso cref="M:UtilPack.AsyncEnumeration.SequentialEnumerationStartInfo`1.#ctor(UtilPack.AsyncEnumeration.MoveNextAsyncDelegate{`0},UtilPack.AsyncEnumeration.EnumerationEndedDelegate)"/>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateSequentialEnumerator``1(UtilPack.AsyncEnumeration.MoveNextAsyncDelegate{``0},UtilPack.AsyncEnumeration.EnumerationEndedDelegate)">
+            <summary>
+            Creates a new instance of <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which fetches one item at a time using given callback.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <param name="moveNext">The callback for potentially asynchronously fetching next item.</param>
+            <param name="dispose">The callback to dispose enumerator.</param>
+            <returns>A new instance of <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which behaves like <paramref name="moveNext"/> and <paramref name="dispose"/> specify.</returns>
+            <remarks>
+            The returned <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> will have guard code to prevent concurrent invocation.
+            </remarks>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateConcurrentEnumerable``2(System.Func{UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo{``0,``1}})">
+            <summary>
+            Creates a new instance of <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> with given callback to create <see cref="T:UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo`2"/> for each new <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource`1"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <typeparam name="TState">The type of state to transfer between <see cref="P:UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo`2.HasNext"/> and <see cref="P:UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo`2.GetNext"/> invocations.</typeparam>
+            <param name="enumerationStart">The callback to create a new <see cref="T:UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo`2"/> for each new <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource`1"/>.</param>
+            <returns>A new instance of <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> which behaves like <see cref="T:UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo`2"/> returned by <paramref name="enumerationStart"/> specifies.</returns>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateConcurrentStartInfo``2(UtilPack.AsyncEnumeration.HasNextDelegate{``1},UtilPack.AsyncEnumeration.GetNextItemAsyncDelegate{``0,``1},UtilPack.AsyncEnumeration.EnumerationEndedDelegate)">
+            <summary>
+            Helper method to invoke constructor of <see cref="T:UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo`2"/> without explicitly specifying generic type arguments.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <typeparam name="TState">The type of state to transfer between <see cref="P:UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo`2.HasNext"/> and <see cref="P:UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo`2.GetNext"/> invocations.</typeparam>
+            <param name="hasNext">The callback to synchronously check whether there are more items.</param>
+            <param name="getNext">The callback for potentially asynchronously fetching next item.</param>
+            <param name="dispose">The callback to dispose enumerator.</param>
+            <returns>A new <see cref="T:UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo`2"/>.</returns>
+            <seealso cref="M:UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo`2.#ctor(UtilPack.AsyncEnumeration.HasNextDelegate{`1},UtilPack.AsyncEnumeration.GetNextItemAsyncDelegate{`0,`1},UtilPack.AsyncEnumeration.EnumerationEndedDelegate)"/>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateStatefulWrappingEnumerable``1(System.Func{UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo{``0}})">
+            <summary>
+            This creates a <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> that will behave like the given set of delegates.
+            Each enumeration is assumed to have inner state, meaning that the call to create delegates is done on every call to <see cref="M:System.Collections.Generic.IAsyncEnumerable`1.GetAsyncEnumerator"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <param name="startInfoFactory">The callback creating a structure containing all the delegates that the calls to methods of <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> will be call-through to.</param>
+            <returns>A new <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>, which will call the given <paramref name="startInfoFactory"/> on each call to <see cref="M:System.Collections.Generic.IAsyncEnumerable`1.GetAsyncEnumerator"/>, and the resulting <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> will pass each invocation of its methods the set of delegates returned by <paramref name="startInfoFactory"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="startInfoFactory"/> is <c>null</c>.</exception>
+            <seealso cref="T:UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo`1"/>
+            <seealso cref="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateWrappingStartInfo``1(UtilPack.AsyncEnumeration.WaitForNextDelegate,UtilPack.AsyncEnumeration.TryGetNextDelegate{``0},UtilPack.AsyncEnumeration.EnumerationEndedDelegate)"/>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateStatelessWrappingEnumerable``1(UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo{``0})">
+            <summary>
+            This creates a <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> that will behave like the given set of delegates.
+            Each enumeration is assumed to be stateless, meaning that the same set of delegates is shared by all instances returned by <see cref="M:System.Collections.Generic.IAsyncEnumerable`1.GetAsyncEnumerator"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <param name="startInfo">The <see cref="T:UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo`1"/> containing delegates that capture all signatures of all methods of <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> interface.</param>
+            <returns>A new <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>, which will share the given delegates by all instances returned by <see cref="M:System.Collections.Generic.IAsyncEnumerable`1.GetAsyncEnumerator"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">If either of <see cref="P:UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo`1.WaitForNext"/> or <see cref="P:UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo`1.TryGetNext"/> delegates of <paramref name="startInfo"/> are <c>null</c>.</exception>
+            <seealso cref="T:UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo`1"/>
+            <seealso cref="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateWrappingStartInfo``1(UtilPack.AsyncEnumeration.WaitForNextDelegate,UtilPack.AsyncEnumeration.TryGetNextDelegate{``0},UtilPack.AsyncEnumeration.EnumerationEndedDelegate)"/>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateWrappingEnumerator``1(UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo{``0})">
+            <summary>
+            This creates a <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> that will behave like the given set of delegates.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <param name="startInfo">The <see cref="T:UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo`1"/> containing delegates that capture all signatures of all methods of <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> interface.</param>
+            <returns>A new <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>, which will behave like the given set of delegates.</returns>
+            <exception cref="T:System.ArgumentNullException">If either of <see cref="P:UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo`1.WaitForNext"/> or <see cref="P:UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo`1.TryGetNext"/> delegates of <paramref name="startInfo"/> are <c>null</c>.</exception>
+            <seealso cref="T:UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo`1"/>
+            <seealso cref="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateWrappingStartInfo``1(UtilPack.AsyncEnumeration.WaitForNextDelegate,UtilPack.AsyncEnumeration.TryGetNextDelegate{``0},UtilPack.AsyncEnumeration.EnumerationEndedDelegate)"/>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateWrappingStartInfo``1(UtilPack.AsyncEnumeration.WaitForNextDelegate,UtilPack.AsyncEnumeration.TryGetNextDelegate{``0},UtilPack.AsyncEnumeration.EnumerationEndedDelegate)">
+            <summary>
+             Helper method to invoke constructor of <see cref="T:UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo`1"/> without explicitly specifying generic type arguments.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <param name="waitForNext">The callback that will be used by <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/>.</param>
+            <param name="tryGetNext">The callback that will be used by <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.TryGetNext(System.Boolean@)"/>.</param>
+            <param name="dispose">The optional callback that will be used by <see cref="M:System.IAsyncDisposable.DisposeAsync"/>.</param>
+            <returns>A new instance of <see cref="T:UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo`1"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">If either of <paramref name="waitForNext"/> or <paramref name="tryGetNext"/> is <c>null</c>.</exception>
+            <seealso cref="T:UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo`1"/>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.MoveNextAsyncDelegate`1">
+            <summary>
+            This delegate will be used by the <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/> method of <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> returned by <see cref="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateSequentialEnumerator``1(UtilPack.AsyncEnumeration.MoveNextAsyncDelegate{``0},UtilPack.AsyncEnumeration.EnumerationEndedDelegate)"/> and <see cref="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateSequentialEnumerable``1(System.Func{UtilPack.AsyncEnumeration.SequentialEnumerationStartInfo{``0}})"/> methods.
+            </summary>
+            <typeparam name="T">The type of the items being enumerated.</typeparam>
+            <returns>A value task with information about next item fetched.</returns>
+            <remarks>
+            The information is a tuple, where the elements are interpreted as following:
+            <list type="number">
+            <item><term><see cref="T:System.Boolean"/></term><description>Whether this fetch was a success. If enumerable has no more items, this should be <c>false</c>.</description></item>
+            <item><term><typeparamref name="T"/></term><description>The item fetched.</description></item>
+            </list>
+            </remarks>
+            <seealso cref="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateSequentialEnumerator``1(UtilPack.AsyncEnumeration.MoveNextAsyncDelegate{``0},UtilPack.AsyncEnumeration.EnumerationEndedDelegate)"/>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.EnumerationEndedDelegate">
+            <summary>
+            This delegate will be used by <see cref="M:System.IAsyncDisposable.DisposeAsync"/> methods when enumeration end is encountered.
+            </summary>
+            <returns>A task to perform asynchronous disposing. If no asynchronous disposing is needed, this delegate can return <c>null</c>.</returns>
+            <seealso cref="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateSequentialEnumerator``1(UtilPack.AsyncEnumeration.MoveNextAsyncDelegate{``0},UtilPack.AsyncEnumeration.EnumerationEndedDelegate)"/>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.HasNextDelegate`1">
+            <summary>
+            This delegate is used by <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> created by <see cref="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateConcurrentEnumerable``2(System.Func{UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo{``0,``1}})"/>.
+            </summary>
+            <typeparam name="TState">The type of state to pass to <see cref="T:UtilPack.AsyncEnumeration.GetNextItemAsyncDelegate`2"/>.</typeparam>
+            <returns>A tuple with information about success movenext operation.</returns>
+            <remarks>
+            The information is a tuple, where the elements are interpreted as following:
+            <list type="number">
+            <item><term><see cref="T:System.Boolean"/></term><description>Whether this fetch was a success. If enumerable has no more items, this should be <c>false</c>.</description></item>
+            <item><term><typeparamref name="TState"/></term><description>The state to pass to <see cref="T:UtilPack.AsyncEnumeration.GetNextItemAsyncDelegate`2"/>.</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.GetNextItemAsyncDelegate`2">
+            <summary>
+            This delegate is used by <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> created by <see cref="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateConcurrentEnumerable``2(System.Func{UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo{``0,``1}})"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <typeparam name="TMoveNextResult">The type of state returned by <see cref="T:UtilPack.AsyncEnumeration.HasNextDelegate`1"/>.</typeparam>
+            <param name="moveNextResult">The state component of the result of the <see cref="T:UtilPack.AsyncEnumeration.HasNextDelegate`1"/> call.</param>
+            <returns>A task to potentially asynchronously fetch the next item.</returns>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.SequentialEnumerationStartInfo`1">
+            <summary>
+            This struct captures information required for callback-based <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <seealso cref="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateSequentialEnumerable``1(System.Func{UtilPack.AsyncEnumeration.SequentialEnumerationStartInfo{``0}})"/>
+            <seealso cref="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateSequentialStartInfo``1(UtilPack.AsyncEnumeration.MoveNextAsyncDelegate{``0},UtilPack.AsyncEnumeration.EnumerationEndedDelegate)"/>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.SequentialEnumerationStartInfo`1.#ctor(UtilPack.AsyncEnumeration.MoveNextAsyncDelegate{`0},UtilPack.AsyncEnumeration.EnumerationEndedDelegate)">
+            <summary>
+            Initializes a new <see cref="T:UtilPack.AsyncEnumeration.SequentialEnumerationStartInfo`1"/> with given callbacks.
+            </summary>
+            <param name="moveNext">The callback to fetch next item.</param>
+            <param name="dispose">The optional callback to dispose enumerator. May be <c>null</c>.</param>
+            <remarks>
+            If <paramref name="moveNext"/> is <c>null</c>, then enumeration ends immediately.
+            </remarks>
+            <seealso cref="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateSequentialStartInfo``1(UtilPack.AsyncEnumeration.MoveNextAsyncDelegate{``0},UtilPack.AsyncEnumeration.EnumerationEndedDelegate)"/>
+        </member>
+        <member name="P:UtilPack.AsyncEnumeration.SequentialEnumerationStartInfo`1.MoveNext">
+            <summary>
+            Gets the callback to potentially asynchronously fetch the next item.
+            </summary>
+            <value>The callback to potentially asynchronously fetch the next item.</value>
+        </member>
+        <member name="P:UtilPack.AsyncEnumeration.SequentialEnumerationStartInfo`1.Dispose">
+            <summary>
+            Gets the callback to dispose enumerator.
+            </summary>
+            <value>The callback to dispose enumerator.</value>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo`2">
+            <summary>
+            This struct captures information required for callback-based <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <typeparam name="TState">The type of state to pass between <see cref="P:UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo`2.HasNext"/> and <see cref="P:UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo`2.GetNext"/> invocations.</typeparam>
+            <seealso cref="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateConcurrentEnumerable``2(System.Func{UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo{``0,``1}})"/>
+            <seealso cref="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateConcurrentStartInfo``2(UtilPack.AsyncEnumeration.HasNextDelegate{``1},UtilPack.AsyncEnumeration.GetNextItemAsyncDelegate{``0,``1},UtilPack.AsyncEnumeration.EnumerationEndedDelegate)"/>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo`2.#ctor(UtilPack.AsyncEnumeration.HasNextDelegate{`1},UtilPack.AsyncEnumeration.GetNextItemAsyncDelegate{`0,`1},UtilPack.AsyncEnumeration.EnumerationEndedDelegate)">
+            <summary>
+            Initializes a new <see cref="T:UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo`2"/> with given callbacks.
+            </summary>
+            <param name="hasNext">The callback to synchronously check whether there are more items.</param>
+            <param name="getNext">The callback to potentially asynchronously fetch next item.</param>
+            <param name="dispose">The optional callback to dispose the enumerator. May be <c>null</c>.</param>
+            <remarks>
+            If <paramref name="hasNext"/> or <paramref name="getNext"/> is <c>null</c>, then the enumerable is considered to be empty.
+            </remarks>
+            <seealso cref="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateConcurrentStartInfo``2(UtilPack.AsyncEnumeration.HasNextDelegate{``1},UtilPack.AsyncEnumeration.GetNextItemAsyncDelegate{``0,``1},UtilPack.AsyncEnumeration.EnumerationEndedDelegate)"/>
+        </member>
+        <member name="P:UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo`2.HasNext">
+            <summary>
+            Gets the callback to synchronously check whether there are more items.
+            </summary>
+            <value>The callback to synchronously check whether there are more items.</value>
+        </member>
+        <member name="P:UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo`2.GetNext">
+            <summary>
+            Gets the callback to potentially asynchronously fetch next item.
+            </summary>
+            <value>The callback to potentially asynchronously fetch next item.</value>
+        </member>
+        <member name="P:UtilPack.AsyncEnumeration.ConcurrentEnumerationStartInfo`2.Dispose">
+            <summary>
+            Gets the optional callback to dispose the enumerator.
+            </summary>
+            <value>The optional callback to dispose the enumerator.</value>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.WaitForNextDelegate">
+            <summary>
+            This delegate captures signature of <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/>, and is used by <see cref="T:UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo`1"/>.
+            </summary>
+            <returns>Potentially asynchronously returns value indicating whether there are more elements to be enumerated.</returns>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.TryGetNextDelegate`1">
+            <summary>
+            This delegate captures signature of <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.TryGetNext(System.Boolean@)"/>, and is used by <see cref="T:UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo`1"/>.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <param name="success">Whether this call was successful in retrieving next item.</param>
+            <returns>The next item.</returns>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo`1">
+            <summary>
+            This type contains a set of delegates required to mimic <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.
+            It is used by <see cref="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateStatefulWrappingEnumerable``1(System.Func{UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo{``0}})"/> and <see cref="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateStatelessWrappingEnumerable``1(UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo{``0})"/> methods to capture required delegates as single type.
+            The <see cref="M:UtilPack.AsyncEnumeration.AsyncEnumerationFactory.CreateWrappingStartInfo``1(UtilPack.AsyncEnumeration.WaitForNextDelegate,UtilPack.AsyncEnumeration.TryGetNextDelegate{``0},UtilPack.AsyncEnumeration.EnumerationEndedDelegate)"/> can be used to create instances of this type when the type arguments can be implicitly deduced.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo`1.#ctor(UtilPack.AsyncEnumeration.WaitForNextDelegate,UtilPack.AsyncEnumeration.TryGetNextDelegate{`0},UtilPack.AsyncEnumeration.EnumerationEndedDelegate)">
+            <summary>
+            Creates a new instance of <see cref="T:UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo`1"/>.
+            </summary>
+            <param name="waitForNext">The callback that will be used by <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/>.</param>
+            <param name="tryGetNext">The callback that will be used by <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.TryGetNext(System.Boolean@)"/>.</param>
+            <param name="dispose">The optional callback that will be used by <see cref="M:System.IAsyncDisposable.DisposeAsync"/>.</param>
+            <exception cref="T:System.ArgumentNullException">If either of <paramref name="waitForNext"/> or <paramref name="tryGetNext"/> is <c>null</c>.</exception>
+        </member>
+        <member name="P:UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo`1.WaitForNext">
+            <summary>
+            Gets the callback for <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/> method.
+            </summary>
+            <value>The callback for <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/> method.</value>
+            <seealso cref="T:UtilPack.AsyncEnumeration.WaitForNextDelegate"/>
+        </member>
+        <member name="P:UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo`1.TryGetNext">
+            <summary>
+            Gets the callback for <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.TryGetNext(System.Boolean@)"/> method.
+            </summary>
+            <value>The callback for <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.TryGetNext(System.Boolean@)"/> method.</value>
+            <seealso cref="T:UtilPack.AsyncEnumeration.WaitForNextDelegate"/>
+        </member>
+        <member name="P:UtilPack.AsyncEnumeration.WrappingEnumerationStartInfo`1.Dispose">
+            <summary>
+            Gets the callback for <see cref="M:System.IAsyncDisposable.DisposeAsync"/> method.
+            </summary>
+            <value>The callback for <see cref="M:System.IAsyncDisposable.DisposeAsync"/> method.</value>
+            <seealso cref="T:UtilPack.AsyncEnumeration.EnumerationEndedDelegate"/>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerableObservable`1">
+            <summary>
+            This interface augments <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerable`1"/> with observation aspect.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerableObservable`1.GetConcurrentEnumeratorSource(UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments)">
+            <summary>
+            Gets the <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSourceObservable`1"/> to use to concurrently enumerate this <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerableObservable`1"/>.
+            </summary>
+            <returns>A <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSourceObservable`1"/> which should be used to concurrently enumerate this <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerableObservable`1"/>.</returns>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerableObservable`2">
+            <summary>
+            This interface augments <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerableObservable`1"/> with metadata which will be passed on to event handlers.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <typeparam name="TMetadata">The type of metadata to pass to event handlers.</typeparam>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerableObservable`2.GetConcurrentEnumeratorSource(UtilPack.AsyncEnumeration.ConcurrentEnumerationArguments)">
+            <summary>
+            Gets the <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSourceObservable`2"/> to use to concurrently enumerate this <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerableObservable`2"/>.
+            </summary>
+            <returns>A <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSourceObservable`2"/> which should be used to concurrently enumerate this <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumerableObservable`2"/>.</returns>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSourceObservable`1">
+            <summary>
+            This interface augments the <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSource`1"/> with observability aspect.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSourceObservable`2">
+            <summary>
+            This interface augments the <see cref="T:UtilPack.AsyncEnumeration.IAsyncConcurrentEnumeratorSourceObservable`1"/> with metadata which will be passed on to event handlers.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <typeparam name="TMetadata">The type of metadata to pass to event handlers.</typeparam>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`1">
+            <summary>
+            This interface groups together all events which may occur when enumerating a <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/>.
+            </summary>
+            <typeparam name="T">The type of the items being enumerated. This parameter is covariant.</typeparam>
+            <remarks>
+            In order to achieve covariance on <typeparamref name="T"/> (which may be very important requirement in certain situation), <see cref="T:UtilPack.GenericEventHandler`1"/> delegate is used instead of <see cref="T:System.EventHandler`1"/>.
+            </remarks>
+        </member>
+        <member name="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`1.BeforeEnumerationStart">
+            <summary>
+            This event occurs just before starting enumeration in initial <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/> method call.
+            </summary>
+        </member>
+        <member name="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`1.AfterEnumerationStart">
+            <summary>
+            This event occurs just after starting enumeration in initial <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/> method call.
+            </summary>
+        </member>
+        <member name="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`1.AfterEnumerationItemEncountered">
+            <summary>
+            This event occurs after each time when next item is asynchronously fetched in <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/> method call.
+            </summary>
+        </member>
+        <member name="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`1.BeforeEnumerationEnd">
+            <summary>
+            This event occurs after enumeration end is detected in <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/> method call (causing it to return <c>false</c>).
+            The difference to <see cref="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`1.AfterEnumerationEnd"/> event is that this event is triggered before asynchronous dispose action is invoked.
+            </summary>
+        </member>
+        <member name="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`1.AfterEnumerationEnd">
+            <summary>
+            This event occurs after enumeration end is detected in <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/> method call (causing it to return <c>false</c>).
+            The difference to <see cref="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`1.BeforeEnumerationEnd"/> event is that this event is triggered after asynchronous dispose action is invoked.
+            </summary>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`2">
+            <summary>
+            This interface groups together all events which may occur when enumerating a <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumeratorObservable`2"/> which also has a metadata object bound to it.
+            </summary>
+            <typeparam name="T">The type of the items being enumerated. This parameter is covariant.</typeparam>
+            <typeparam name="TMetadata">The type of the metadata. This parameter is covariant.</typeparam>
+            <remarks>
+            In order to achieve covariance on <typeparamref name="T"/> and <typeparamref name="TMetadata"/> (which may be very important requirement in certain situation), <see cref="T:UtilPack.GenericEventHandler`1"/> delegate is used instead of <see cref="T:System.EventHandler`1"/>.
+            </remarks>
+        </member>
+        <member name="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`2.BeforeEnumerationStart">
+            <summary>
+            This event occurs just before starting enumeration in initial <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/> method call.
+            </summary>
+        </member>
+        <member name="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`2.AfterEnumerationStart">
+            <summary>
+            This event occurs just after starting enumeration in initial <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/> method call.
+            </summary>
+        </member>
+        <member name="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`2.AfterEnumerationItemEncountered">
+            <summary>
+            This event occurs after each time when next item is asynchronously fetched in <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/> method call.
+            </summary>
+        </member>
+        <member name="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`2.BeforeEnumerationEnd">
+            <summary>
+            This event occurs after enumeration end is detected in <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/> method call (causing it to return <c>false</c>).
+            The difference to <see cref="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`2.AfterEnumerationEnd"/> event is that this event is triggered before asynchronous dispose action is invoked.
+            </summary>
+        </member>
+        <member name="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`2.AfterEnumerationEnd">
+            <summary>
+            This event occurs after enumeration end is detected in <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/> method call (causing it to return <c>false</c>).
+            The difference to <see cref="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`2.BeforeEnumerationEnd"/> event is that this event is triggered after asynchronous dispose action is invoked.
+            </summary>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.ObjectWithMetadata`1">
+            <summary>
+            This interface is common abstraction for anything with typed metadata object.
+            </summary>
+            <typeparam name="TMetadata">The type of the metadata. This parameter is covariant.</typeparam>
+        </member>
+        <member name="P:UtilPack.AsyncEnumeration.ObjectWithMetadata`1.Metadata">
+            <summary>
+            Gets the metadata object supplied to this <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumeratorObservable`2"/> at creation time.
+            </summary>
+            <value>The metadata object supplied to this <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumeratorObservable`2"/> at creation time.</value>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.EnumerationStartedEventArgs">
+            <summary>
+            This interface is for event arguments object in <see cref="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`1.BeforeEnumerationStart"/> and <see cref="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`1.AfterEnumerationStart"/> events.
+            </summary>
+            <seealso cref="P:UtilPack.AsyncEnumeration.EnumerationEventArgsUtility.StatelessStartArgs"/>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.EnumerationItemEventArgs`1">
+            <summary>
+            This interface is for event arguments object in <see cref="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`1.AfterEnumerationItemEncountered"/> event.
+            </summary>
+            <typeparam name="T">The type of the items being enumerated. This parameter is covariant.</typeparam>
+            <seealso cref="T:UtilPack.AsyncEnumeration.EnumerationItemEventArgsImpl`1"/>
+        </member>
+        <member name="P:UtilPack.AsyncEnumeration.EnumerationItemEventArgs`1.Item">
+            <summary>
+            Gets the item that was fetched asynchronously.
+            </summary>
+            <value>The item that was fetched asynchronously.</value>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.EnumerationEndedEventArgs">
+            <summary>
+            This interface is for event arguments object in <see cref="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`1.BeforeEnumerationEnd"/> and <see cref="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`1.AfterEnumerationEnd"/> events.
+            </summary>
+            <seealso cref="P:UtilPack.AsyncEnumeration.EnumerationEventArgsUtility.StatelessEndArgs"/>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.EnumerationStartedEventArgs`1">
+            <summary>
+            This interface augments <see cref="T:UtilPack.AsyncEnumeration.EnumerationStartedEventArgs"/> with metadata object given to <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumeratorObservable`2"/>.
+            </summary>
+            <typeparam name="TMetadata">The type of the metadata. This parameter is covariant.</typeparam>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.EnumerationEndedEventArgs`1">
+            <summary>
+            This interface augments <see cref="T:UtilPack.AsyncEnumeration.EnumerationEndedEventArgs"/> with metadata object given to <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumeratorObservable`2"/>.
+            </summary>
+            <typeparam name="TMetadata">The type of the metadata. This parameter is covariant.</typeparam>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.EnumerationItemEventArgs`2">
+            <summary>
+            This interface augments <see cref="T:UtilPack.AsyncEnumeration.EnumerationItemEventArgs`1"/> with metadata object given to <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumeratorObservable`2"/>.
+            </summary>
+            <typeparam name="T">The type of the items being enumerated. This parameter is covariant.</typeparam>
+            <typeparam name="TMetadata">The type of the metadata. This parameter is covariant.</typeparam>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.EnumerationEventArgsUtility">
+            <summary>
+            This static class contains few useful members when working with event arguments of events of <see cref="T:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`1"/> interface.
+            </summary>
+        </member>
+        <member name="P:UtilPack.AsyncEnumeration.EnumerationEventArgsUtility.StatelessStartArgs">
+            <summary>
+            Gets the stateless default instance of type <see cref="T:UtilPack.AsyncEnumeration.EnumerationStartedEventArgs"/>, used by <see cref="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`1.BeforeEnumerationStart"/> and <see cref="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`1.AfterEnumerationStart"/> events.
+            </summary>
+            <value>The stateless default instance of type <see cref="T:UtilPack.AsyncEnumeration.EnumerationStartedEventArgs"/>.</value>
+        </member>
+        <member name="P:UtilPack.AsyncEnumeration.EnumerationEventArgsUtility.StatelessEndArgs">
+            <summary>
+            Gets the stateless default instance of type <see cref="T:UtilPack.AsyncEnumeration.EnumerationEndedEventArgs"/>, used by <see cref="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`1.BeforeEnumerationEnd"/> and <see cref="E:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`1.AfterEnumerationEnd"/> events.
+            </summary>
+            <value>The stateless default instance of type <see cref="T:UtilPack.AsyncEnumeration.EnumerationEndedEventArgs"/>.</value>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.EnumerationStartedEventArgsImpl`1">
+            <summary>
+            This class provides default implementation for <see cref="T:UtilPack.AsyncEnumeration.EnumerationStartedEventArgs`1"/>.
+            </summary>
+            <typeparam name="TMetadata">The type of metadata.</typeparam>
+            <seealso cref="P:UtilPack.AsyncEnumeration.ObjectWithMetadata`1.Metadata"/>
+            <seealso cref="T:UtilPack.AsyncEnumeration.IAsyncEnumerableObservable`2"/>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.EnumerationStartedEventArgsImpl`1.#ctor(`0)">
+            <summary>
+            Creates a new instance of <see cref="T:UtilPack.AsyncEnumeration.EnumerationStartedEventArgsImpl`1"/> with given metadata.
+            </summary>
+            <param name="metadata">The metadata.</param>
+        </member>
+        <member name="P:UtilPack.AsyncEnumeration.EnumerationStartedEventArgsImpl`1.Metadata">
+            <summary>
+            Gets the metadata.
+            </summary>
+            <value>The metadata.</value>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.EnumerationItemEventArgsImpl`1">
+            <summary>
+            This class provides default implementation for <see cref="T:UtilPack.AsyncEnumeration.EnumerationItemEventArgs`1"/>.
+            </summary>
+            <typeparam name="T">The type of the items being enumerated.</typeparam>
+            <seealso cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/>
+            <seealso cref="M:System.Collections.Generic.IAsyncEnumerator`1.TryGetNext(System.Boolean@)"/>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.EnumerationItemEventArgsImpl`1.#ctor(`0)">
+            <summary>
+            Creates a new instance of <see cref="T:UtilPack.AsyncEnumeration.EnumerationItemEventArgsImpl`1"/> with given item.
+            </summary>
+            <param name="item">The item that was encountered by <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/>.</param>
+        </member>
+        <member name="P:UtilPack.AsyncEnumeration.EnumerationItemEventArgsImpl`1.Item">
+            <summary>
+            Gets the item encountered by <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/>.
+            </summary>
+            <value>The item encountered by <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/>.</value>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.EnumerationEndedEventArgsImpl`1">
+            <summary>
+            This class provides default implementation for <see cref="T:UtilPack.AsyncEnumeration.EnumerationEndedEventArgs`1"/>.
+            </summary>
+            <typeparam name="TMetadata">The type of metadata.</typeparam>
+            <seealso cref="P:UtilPack.AsyncEnumeration.ObjectWithMetadata`1.Metadata"/>
+            <seealso cref="T:UtilPack.AsyncEnumeration.IAsyncEnumerableObservable`2"/>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.EnumerationEndedEventArgsImpl`1.#ctor(`0)">
+            <summary>
+            Creates a new instance of <see cref="T:UtilPack.AsyncEnumeration.EnumerationEndedEventArgsImpl`1"/> with given metadata.
+            </summary>
+            <param name="metadata">The metadata.</param>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.EnumerationItemEventArgsImpl`2">
+            <summary>
+            This class provides default implementation for <see cref="T:UtilPack.AsyncEnumeration.EnumerationItemEventArgs`2"/>.
+            </summary>
+            <typeparam name="T">The type of the items being enumerated.</typeparam>
+            <typeparam name="TMetadata">The type of metadata.</typeparam>
+            <seealso cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/>
+            <seealso cref="M:System.Collections.Generic.IAsyncEnumerator`1.TryGetNext(System.Boolean@)"/>
+            <seealso cref="P:UtilPack.AsyncEnumeration.ObjectWithMetadata`1.Metadata"/>
+            <seealso cref="T:UtilPack.AsyncEnumeration.IAsyncEnumerableObservable`2"/>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.EnumerationItemEventArgsImpl`2.#ctor(`0,`1)">
+            <summary>
+            Creates a new instance of <see cref="T:UtilPack.AsyncEnumeration.EnumerationItemEventArgsImpl`2"/> with given item and metadata.
+            </summary>
+            <param name="item">The item that was encountered by <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/></param>
+            <param name="metadata">The metadata.</param>
+        </member>
+        <member name="P:UtilPack.AsyncEnumeration.EnumerationItemEventArgsImpl`2.Metadata">
+            <summary>
+            Gets the metadata.
+            </summary>
+            <value>The metadata.</value>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.IAsyncEnumerableObservable`1">
+            <summary>
+            This interface augments <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> with observation aspect.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.IAsyncEnumerableObservable`1.GetAsyncEnumerator">
+            <summary>
+            Gets the <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumeratorObservable`1"/> to use to enumerate this <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumerableObservable`1"/>.
+            </summary>
+            <returns>A <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumeratorObservable`1"/> which should be used to enumerate this <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumerableObservable`1"/>.</returns>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.IAsyncEnumeratorObservable`1">
+            <summary>
+            This interface augments <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> with ability to observe various events that enumerating will cause.
+            These events are contained in <see cref="T:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`1"/> interface.
+            </summary>
+            <typeparam name="T">The type of the items being enumerated. This parameter is covariant.</typeparam>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.IAsyncEnumerableObservable`2">
+            <summary>
+            This interface augments <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumerableObservable`1"/> with metadata which will be passed on to event handlers.
+            </summary>
+            <typeparam name="T">The type of items being enumerated.</typeparam>
+            <typeparam name="TMetadata">The type of metadata to pass to event handlers.</typeparam>
+        </member>
+        <member name="M:UtilPack.AsyncEnumeration.IAsyncEnumerableObservable`2.GetAsyncEnumerator">
+            <summary>
+            Gets the <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumeratorObservable`2"/> to use to enumerate this <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumerableObservable`2"/>.
+            </summary>
+            <returns>A <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumeratorObservable`2"/> which should be used to enumerate this <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumerableObservable`2"/>.</returns>
+        </member>
+        <member name="T:UtilPack.AsyncEnumeration.IAsyncEnumeratorObservable`2">
+            <summary>
+            This interface augments <see cref="T:UtilPack.AsyncEnumeration.IAsyncEnumeratorObservable`1"/> with ability to observe various events that enumerating will cause.
+            These events are contained in <see cref="T:UtilPack.AsyncEnumeration.AsyncEnumerationObservation`2"/> interface.
+            </summary>
+            <typeparam name="T">The type of the items being enumerated. This parameter is covariant.</typeparam>
+            <typeparam name="TMetadata">The type of the metadata. This parameter is covariant.</typeparam>
+        </member>
+        <member name="T:System.Collections.Generic.IAsyncEnumerable`1">
+            <summary>
+            This interface mimics <see cref="T:System.Collections.Generic.IEnumerable`1"/> for enumerables which must perform asynchronous waiting when moving to next item.
+            </summary>
+            <typeparam name="T">The type of items being enumerated. This parameter is covariant.</typeparam>
+        </member>
+        <member name="M:System.Collections.Generic.IAsyncEnumerable`1.GetAsyncEnumerator">
+            <summary>
+            Gets the <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> to use to enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.
+            </summary>
+            <returns>A <see cref="T:System.Collections.Generic.IAsyncEnumerator`1"/> which should be used to enumerate this <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/>.</returns>
+        </member>
+        <member name="T:System.Collections.Generic.IAsyncEnumerator`1">
+            <summary>
+            This interface mimics <see cref="T:System.Collections.Generic.IEnumerator`1"/> for enumerators which can potentially cause asynchronous waiting.
+            Such scenario is common in e.g. enumerating SQL query results.
+            </summary>
+            <typeparam name="T">The type of the items being enumerated. This parameter is covariant.</typeparam>
+        </member>
+        <member name="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync">
+            <summary>
+            This method mimics <see cref="M:System.Collections.IEnumerator.MoveNext"/> method in order to asynchronously read the next item.
+            Please note that instead of directly using this method, one should use <see cref="M:E_UtilPack.EnumerateSequentiallyAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Action{``0})"/>, <see cref="M:E_UtilPack.EnumerateSequentiallyAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.Tasks.Task})"/>´extension methods, as those methods will take care of properly finishing enumeration in case of exceptions.
+            </summary>
+            <returns>A task, which will return <c>true</c> if next item is encountered, and <c>false</c> if this enumeration ended.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.IAsyncEnumerator`1.TryGetNext(System.Boolean@)">
+            <summary>
+            This method mimics <see cref="P:System.Collections.Generic.IEnumerator`1.Current"/> property in order to get one or more items previously fetched by <see cref="M:System.Collections.Generic.IAsyncEnumerator`1.WaitForNextAsync"/>.
+            </summary>
+            <param name="success">Whether getting next value was successful.</param>
+        </member>
+    </members>
+</doc>

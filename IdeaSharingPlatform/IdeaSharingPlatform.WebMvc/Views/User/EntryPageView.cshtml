@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="tr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Anasayfa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="~/Scripts/Templates/StyleSheet2.css">
+</head>
+
+<body>
+    @using (Html.BeginForm("EntryPageView", "User", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken();
+        <div class="topnav">
+            <a href="#news">Bize Ulaşın</a>
+            <a href="#contact">Ayarlar</a>
+            <a href="#about">Arama</a>
+        </div>
+        <h1 class="pagename">FıkırIdea</h1>
+        <div class="animate__animated animate__fadeIn">
+            <div class="container">
+                <h2 style="color:rgb(25, 31, 23);font-size: 35px;">Hosgeldiniz</h2>
+                <p> FıkırIdea .. yılında fikir seahiplerinin bişey bişey Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+            </div>
+        </div>
+        <div class="animate__animated animate__fadeIn" style="justify-content: center;display: flex;">
+            <button type="submit" id="ListProjectsForGuest" name="EntryPage" value="ListProjectsForGuest" style="width:500px;height:200px;float:left;margin: 20px;margin-bottom:0px">Projeleri Keşfedin</button>
+            <button type="submit" id="LogIn" name="EntryPage" value="LogIn" style="width:500px;height:200px;float:left;margin: 20px;margin-bottom:0px">Giriş Yapın Ya Da Bize Katılın</button>
+        </div>
+    }
+
+
+
+
+
+</body>
+</html>
+

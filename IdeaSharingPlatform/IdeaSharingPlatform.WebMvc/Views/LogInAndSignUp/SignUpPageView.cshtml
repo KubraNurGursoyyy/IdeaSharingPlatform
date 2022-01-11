@@ -1,0 +1,200 @@
+﻿@model IdeaSharingPlatform.Models.Concretes.Users
+@{
+    ViewBag.Title = "SignUpPageView";
+}
+<!DOCTYPE html>
+
+<html lang="tr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kayıt ol</title>
+    <link rel="stylesheet" href="~/Scripts/Templates/StyleSheet1.css">
+    <!--
+         <style>
+        body {
+            margin: 0;
+            background-image: url(iiii.jpg);
+            background-size: 100%;
+            font-family: Didot, serif;
+        }
+
+        input[type=text], input[type=password], input[type=date], input[type=tel], input[type=email] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #173f38;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+            button:hover {
+                opacity: 0.8;
+            }
+
+        .container {
+            padding: 16px;
+        }
+        .pagename {
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+            font-size: 50px;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #2c3d26;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding-left:35px;
+            padding-top: 0px;
+            text-shadow: 2px 2px 7pxrgba(255, 255, 255, 0.9);
+        }
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-top: 60px;
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+            border: 1px solid #888;
+            width: 40%; /* Could be more or less, depending on screen size */
+        }
+
+        /* Add Zoom Animation */
+        .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s
+        }
+
+        -webkit-keyframes animatezoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        keyframes animatezoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+    </style>
+
+
+    -->
+
+    <style>
+     
+
+        input[type=submit] {
+            background-color: #33524c;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+            input[type=submit]:hover {
+                opacity: 0.8;
+            }
+    </style>
+</head>
+<body>
+
+    <h1 class="pagename" style="font-size: 35px;">Idealand</h1>
+
+    @using (Html.BeginForm("SignUpPageView", "LogInAndSignUp", FormMethod.Post))
+    {
+
+        @Html.AntiForgeryToken();
+        <div class="modal-content animate">
+            <div class="container">
+                <label for="UserFirstName"><b>İsim</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UserFirstName, new { htmlAttributes = new { @class = "form-control", @placeholder = "İsmini Giriniz*", @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.UserFirstName, "", new { @class = "text-danger" })
+                </div>
+                <label for="UserLastName"><b>Soyisim</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UserLastName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Soy İsminizi Giriniz*", @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.UserLastName, "", new { @class = "text-danger" })
+                </div>
+
+                <label for="UserEmail"><b>Email</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UserEmail, new { htmlAttributes = new { @class = "form-control", @placeholder = "E-Mailinizi Giriniz*", @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.UserEmail, "", new { @class = "text-danger" })
+                </div>
+
+                <label for="UserPassword"><b>Şifre</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UserPassword, new { htmlAttributes = new { @class = "form-control", @placeholder = "Şifrenizi Giriniz*", @type = "Password", @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.UserPassword, "", new { @class = "text-danger" })
+                </div>
+
+                <label for="UserAbout"><b>Hakkında</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UserAbout, new { htmlAttributes = new { @class = "form-control", @placeholder = "Bize kendiniz ile ilgili birkaç şey söyleyin.*",  @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.UserAbout, "", new { @class = "text-danger" })
+                </div>
+
+                <label for="UserLocation"><b>Konum</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UserLocation, new { htmlAttributes = new { @class = "form-control", @placeholder = "Konumunuzu Giriniz. Şehir / Ülke olması yeterlidir.*", @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.UserLocation, "", new { @class = "text-danger" })
+                </div>
+
+                <label for="UserUsername"><b>Kullanıcı Adı</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UserUsername, new { htmlAttributes = new { @class = "form-control", @placeholder = "Kullanıcı adınızı giriniz.*", @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.UserUsername, "", new { @class = "text-danger" })
+                </div>
+
+                <label for="UserBirthDate"><b>Doğum Tarihi</b></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UserBirthDate, new { htmlAttributes = new { @class = "form-control", @placeholder = "Doğum tarihinizi giriniz.*", @type = "date", @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.UserBirthDate, "", new { @class = "text-danger" })
+                </div>
+
+                <input type="submit" name="SignUpPageView" value="Kaydol" />
+            </div>
+        </div>
+
+    }
+
+</body>
+</html>
