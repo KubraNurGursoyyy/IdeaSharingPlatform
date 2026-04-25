@@ -64,6 +64,9 @@
       <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Npgsql, Version=4.0.14.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7">
+      <HintPath>..\packages/Npgsql.4.0.14/lib/net451/Npgsql.dll</HintPath>
+      <Private>True</Private>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
